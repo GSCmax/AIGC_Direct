@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources/icon.ico</ApplicationIcon>
+    <Authors>管省超</Authors>
+    <Version>0.0.0.1</Version>
+    <Copyright>Copyright © GSC 2023</Copyright>
+    <RepositoryUrl>https://github.com/GSCmax/AIGC_Direct</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\icon.ico">
+      <Link>Resources\icon.ico</Link>
+    </Resource>
+    <Resource Include="Resources\chatgpt.png">
+      <Link>Resources\chatgpt.png</Link>
+    </Resource>
+    <Resource Include="Resources\bingai.png">
+      <Link>Resources\bingai.png</Link>
+    </Resource>
+    <Resource Include="Resources\yiyan.png">
+      <Link>Resources\yiyan.png</Link>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1722.45" />
+  </ItemGroup>
+
+</Project>

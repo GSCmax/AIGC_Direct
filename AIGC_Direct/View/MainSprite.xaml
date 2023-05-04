@@ -1,0 +1,54 @@
+﻿<Window x:Class="AIGC_Direct.View.MainSprite"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AIGC_Direct.View"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        mc:Ignorable="d"
+        Title="AIGC Direct"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        ResizeMode="NoResize"
+        Topmost="True"
+        AllowsTransparency="True"
+        Background="Transparent"
+        UseLayoutRounding="True"
+        WindowStartupLocation="CenterScreen"
+        local:WindowAttach.ShowInTaskManager="False"
+        local:WindowAttach.IgnoreAltF4="True"
+        local:WindowAttach.HideWhenClosing="True"
+        local:WindowAttach.IsDragElement="True">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="B2VC"/>
+    </Window.Resources>
+
+    <Border Background="{StaticResource PrimaryBrush}" Effect="{StaticResource EffectShadow4}" Margin="25">
+        <local:SimplePanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="2">
+                    <Button Width="47" Height="47" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="chatgpt_Click" MouseDoubleClick="chatgpt_MouseDoubleClick" Margin="2">
+                        <Image Source="/AIGC_Direct;component/Resources/chatgpt.png" Stretch="Uniform"/>
+                    </Button>
+                    <Button Width="47" Height="47" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="bingai_Click" MouseDoubleClick="bingai_MouseDoubleClick" Margin="2">
+                        <Image Source="/AIGC_Direct;component/Resources/bingai.png" Stretch="Uniform"/>
+                    </Button>
+                    <Button Width="47" Height="47" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="yiyan_Click" MouseDoubleClick="yiyan_MouseDoubleClick" Margin="2">
+                        <Image Source="/AIGC_Direct;component/Resources/yiyan.png" Stretch="Uniform"/>
+                    </Button>
+                </StackPanel>
+                <wv2:WebView2 Name="wv1" Height="650" Width="500" Visibility="Collapsed" Source="https://chat.openai.com"/>
+                <wv2:WebView2 Name="wv2" Height="650" Width="500" Visibility="Collapsed" Source="https://www.bing.com/search?q=Bing+AI&amp;showconv=1&amp;FORM=hpcodx"/>
+                <wv2:WebView2 Name="wv3" Height="650" Width="500" Visibility="Collapsed" Source="https://yiyan.baidu.com"/>
+            </StackPanel>
+            <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
+                    Foreground="{StaticResource DangerBrush}" Background="White" Click="exit_Click"
+                    local:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="-3"
+                    HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-9,-9,0"
+                    Visibility="{Binding IsMouseOver,RelativeSource={RelativeSource AncestorType=Window},Converter={StaticResource B2VC}}"/>
+        </local:SimplePanel>
+    </Border>
+</Window>
