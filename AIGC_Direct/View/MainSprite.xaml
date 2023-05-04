@@ -30,13 +30,13 @@
         <local:SimplePanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="2">
-                    <Button Width="47" Height="47" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="chatgpt_Click" MouseDoubleClick="chatgpt_MouseDoubleClick" Margin="2">
+                    <Button Width="45" Height="45" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="chatgpt_Click" MouseDoubleClick="chatgpt_MouseDoubleClick" Margin="2">
                         <Image Source="/AIGC_Direct;component/Resources/chatgpt.png" Stretch="Uniform"/>
                     </Button>
-                    <Button Width="47" Height="47" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="bingai_Click" MouseDoubleClick="bingai_MouseDoubleClick" Margin="2">
+                    <Button Width="45" Height="45" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="bingai_Click" MouseDoubleClick="bingai_MouseDoubleClick" Margin="2">
                         <Image Source="/AIGC_Direct;component/Resources/bingai.png" Stretch="Uniform"/>
                     </Button>
-                    <Button Width="47" Height="47" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="yiyan_Click" MouseDoubleClick="yiyan_MouseDoubleClick" Margin="2">
+                    <Button Width="45" Height="45" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="yiyan_Click" MouseDoubleClick="yiyan_MouseDoubleClick" Margin="2">
                         <Image Source="/AIGC_Direct;component/Resources/yiyan.png" Stretch="Uniform"/>
                     </Button>
                 </StackPanel>
