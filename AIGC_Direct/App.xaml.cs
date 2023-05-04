@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using AIGC_Direct.View;
+using System.Security.Policy;
+using System.Windows;
 
 namespace AIGC_Direct
 {
@@ -7,5 +9,20 @@ namespace AIGC_Direct
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var ms = new MainSprite();
+
+            ms.Opacity = 0;
+
+            ms.Show();
+
+            ms.Left = 0;
+            ms.Top = 0;
+
+            ms.Opacity = 1;
+        }
     }
 }
