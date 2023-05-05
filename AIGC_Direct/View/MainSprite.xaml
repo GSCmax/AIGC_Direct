@@ -17,7 +17,6 @@
         Background="Transparent"
         UseLayoutRounding="True"
         WindowStartupLocation="CenterScreen"
-        MouseWheel="MainSprite_MouseWheel"
         local:WindowAttach.ShowInTaskManager="False"
         local:WindowAttach.IgnoreAltF4="True"
         local:WindowAttach.HideWhenClosing="True"
@@ -48,7 +47,12 @@
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
                     Foreground="{StaticResource DangerBrush}" Background="White" Click="exit_Click"
                     local:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="-3"
-                    HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-9,-9,0"
+                    HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-8,-8,0"
+                    Visibility="{Binding IsMouseOver,RelativeSource={RelativeSource AncestorType=Window},Converter={StaticResource B2VC}}"/>
+            <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
+                    Foreground="{StaticResource PrimaryBrush}" Background="White" Click="info_Click" MouseWheel="info_MouseWheel"
+                    local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-3"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,-8,0,0"
                     Visibility="{Binding IsMouseOver,RelativeSource={RelativeSource AncestorType=Window},Converter={StaticResource B2VC}}"/>
         </local:SimplePanel>
     </Border>

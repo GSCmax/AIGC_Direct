@@ -78,7 +78,15 @@ namespace AIGC_Direct.View
             Process.Start(new ProcessStartInfo() { FileName = @"https://yiyan.baidu.com", UseShellExecute = true });
         }
 
-        private void MainSprite_MouseWheel(object sender, MouseWheelEventArgs e)
+        private void info_Click(object sender, RoutedEventArgs e)
+        {
+            if (WindowAttach.GetIsDragElement(this))
+                WindowAttach.SetIsDragElement(this, false);
+            else
+                WindowAttach.SetIsDragElement(this, true);
+        }
+
+        private void info_MouseWheel(object sender, MouseWheelEventArgs e)
         {
             if (e.Delta > 0)
             {

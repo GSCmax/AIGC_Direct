@@ -19,7 +19,7 @@ namespace AIGC_Direct
 
             ms.Show();
 
-            ms.Left = 0;
+            ms.Left = 25;
             ms.Top = 0;
 
             ms.Opacity = 1;
