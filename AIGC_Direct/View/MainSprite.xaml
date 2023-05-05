@@ -17,6 +17,7 @@
         Background="Transparent"
         UseLayoutRounding="True"
         WindowStartupLocation="CenterScreen"
+        MouseWheel="MainSprite_MouseWheel"
         local:WindowAttach.ShowInTaskManager="False"
         local:WindowAttach.IgnoreAltF4="True"
         local:WindowAttach.HideWhenClosing="True"

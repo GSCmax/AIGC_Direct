@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 
@@ -75,6 +76,24 @@ namespace AIGC_Direct.View
         private void yiyan_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Process.Start(new ProcessStartInfo() { FileName = @"https://yiyan.baidu.com", UseShellExecute = true });
+        }
+
+        private void MainSprite_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                if (Math.Round(this.Opacity, 2) < 1.0)
+                    this.Opacity += 0.05;
+                else
+                    this.Opacity = 1.0;
+            }
+            else
+            {
+                if (Math.Round(this.Opacity, 2) > 0.5)
+                    this.Opacity -= 0.05;
+                else
+                    this.Opacity = 0.5;
+            }
         }
 
         private void exit_Click(object sender, RoutedEventArgs e)
