@@ -1,5 +1,5 @@
 ﻿using AIGC_Direct.View;
-using System.Security.Policy;
+using System;
 using System.Windows;
 
 namespace AIGC_Direct
@@ -16,9 +16,7 @@ namespace AIGC_Direct
             base.OnStartup(e);
 
             ms = new MainSprite();
-
             ms.Opacity = 0;
-
             ms.Show();
 
             ms.Left = Settings.Default.X;
@@ -33,7 +31,7 @@ namespace AIGC_Direct
 
             Settings.Default.X = ms.Left;
             Settings.Default.Y = ms.Top;
-            Settings.Default.O = ms.Opacity;
+            Settings.Default.O = Math.Round(ms.Opacity, 2);
             Settings.Default.L = WindowAttach.GetIsDragElement(ms);
             Settings.Default.Save();
         }

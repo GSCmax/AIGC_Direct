@@ -88,16 +88,17 @@ namespace AIGC_Direct.View
 
         private void info_MouseWheel(object sender, MouseWheelEventArgs e)
         {
+            var o = Math.Round(this.Opacity, 2);
             if (e.Delta > 0)
             {
-                if (Math.Round(this.Opacity, 2) < 1.0)
+                if (o < 1.0)
                     this.Opacity += 0.05;
                 else
                     this.Opacity = 1.0;
             }
             else
             {
-                if (Math.Round(this.Opacity, 2) > 0.5)
+                if (o > 0.5)
                     this.Opacity -= 0.05;
                 else
                     this.Opacity = 0.5;
