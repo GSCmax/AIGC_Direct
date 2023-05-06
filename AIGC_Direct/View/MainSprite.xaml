@@ -51,8 +51,8 @@
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
                     Foreground="{StaticResource PrimaryBrush}" Background="White" Click="info_Click" MouseWheel="info_MouseWheel"
                     local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-3"
-                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,-8,0,0"
-                    Visibility="{Binding IsMouseOver,RelativeSource={RelativeSource AncestorType=Window},Converter={StaticResource B2VC}}"/>
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,-8,0,0"/>
+                    <!--Visibility="{Binding IsMouseOver,RelativeSource={RelativeSource AncestorType=Window},Converter={StaticResource B2VC}}"/>-->
         </local:SimplePanel>
     </Border>
 </Window>

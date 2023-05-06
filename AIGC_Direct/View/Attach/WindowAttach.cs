@@ -22,12 +22,20 @@ namespace AIGC_Direct.View
             {
                 if ((bool)e.NewValue)
                 {
-                    ctl.MouseLeftButtonDown += DragElement_MouseLeftButtonDown;
+                    //ctl.MouseLeftButtonDown += DragElement_MouseLeftButtonDown;
+
+                    ctl.PreviewMouseLeftButtonDown += DragElement_PreviewMouseLeftButtonDown;
+                    ctl.PreviewMouseMove += DragElement_PreviewMouseMove;
+                    ctl.PreviewMouseLeftButtonUp += DragElement_PreviewMouseLeftButtonUp;
                     ctl.KeyDown += DragElement_KeyDown;
                 }
                 else
                 {
-                    ctl.MouseLeftButtonDown -= DragElement_MouseLeftButtonDown;
+                    //ctl.MouseLeftButtonDown -= DragElement_MouseLeftButtonDown;
+
+                    ctl.PreviewMouseLeftButtonDown -= DragElement_PreviewMouseLeftButtonDown;
+                    ctl.PreviewMouseMove -= DragElement_PreviewMouseMove;
+                    ctl.PreviewMouseLeftButtonUp -= DragElement_PreviewMouseLeftButtonUp;
                     ctl.KeyDown -= DragElement_KeyDown;
                 }
             }
@@ -38,6 +46,35 @@ namespace AIGC_Direct.View
             if (sender is DependencyObject obj && e.ButtonState == MouseButtonState.Pressed)
             {
                 System.Windows.Window.GetWindow(obj).DragMove();
+            }
+        }
+
+        private static Point _pressedPosition;
+        private static bool _isDragMoved = false;
+
+        private static void DragElement_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (sender is DependencyObject obj)
+            {
+                _pressedPosition = e.GetPosition(System.Windows.Window.GetWindow(obj));
+            }
+        }
+
+        private static void DragElement_PreviewMouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if (sender is DependencyObject obj && e.LeftButton == MouseButtonState.Pressed && _pressedPosition != e.GetPosition(System.Windows.Window.GetWindow(obj)))
+            {
+                _isDragMoved = true;
+                System.Windows.Window.GetWindow(obj).DragMove();
+            }
+        }
+
+        private static void DragElement_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (_isDragMoved)
+            {
+                _isDragMoved = false;
+                e.Handled = true;
             }
         }
 
