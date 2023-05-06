@@ -23,10 +23,12 @@ namespace AIGC_Direct.View
                 if ((bool)e.NewValue)
                 {
                     ctl.MouseLeftButtonDown += DragElement_MouseLeftButtonDown;
+                    ctl.KeyDown += DragElement_KeyDown;
                 }
                 else
                 {
                     ctl.MouseLeftButtonDown -= DragElement_MouseLeftButtonDown;
+                    ctl.KeyDown -= DragElement_KeyDown;
                 }
             }
         }
@@ -35,7 +37,29 @@ namespace AIGC_Direct.View
         {
             if (sender is DependencyObject obj && e.ButtonState == MouseButtonState.Pressed)
             {
-                System.Windows.Window.GetWindow(obj)?.DragMove();
+                System.Windows.Window.GetWindow(obj).DragMove();
+            }
+        }
+
+        private static void DragElement_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (sender is DependencyObject obj)
+            {
+                switch (e.Key)
+                {
+                    case Key.Up:
+                        System.Windows.Window.GetWindow(obj).Top--;
+                        break;
+                    case Key.Down:
+                        System.Windows.Window.GetWindow(obj).Top++;
+                        break;
+                    case Key.Left:
+                        System.Windows.Window.GetWindow(obj).Left--;
+                        break;
+                    case Key.Right:
+                        System.Windows.Window.GetWindow(obj).Left++;
+                        break;
+                }
             }
         }
         #endregion
