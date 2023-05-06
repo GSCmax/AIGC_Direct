@@ -80,10 +80,10 @@ namespace AIGC_Direct.View
 
         private void info_Click(object sender, RoutedEventArgs e)
         {
-            if (WindowAttach.GetIsDragElement(mainPanel))
-                WindowAttach.SetIsDragElement(mainPanel, false);
+            if (WindowAttach.GetIsDragElement(this))
+                WindowAttach.SetIsDragElement(this, false);
             else
-                WindowAttach.SetIsDragElement(mainPanel, true);
+                WindowAttach.SetIsDragElement(this, true);
         }
 
         private void info_MouseWheel(object sender, MouseWheelEventArgs e)

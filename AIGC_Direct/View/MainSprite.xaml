@@ -27,7 +27,7 @@
 
     <Border Background="{StaticResource PrimaryBrush}" Effect="{StaticResource EffectShadow4}" Margin="25">
         <local:SimplePanel>
-            <StackPanel Orientation="Horizontal" Name="mainPanel">
+            <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="2">
                     <Button Width="45" Height="45" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="chatgpt_Click" MouseDoubleClick="chatgpt_MouseDoubleClick" Margin="2">
                         <Image Source="/AIGC_Direct;component/Resources/chatgpt.png" Stretch="Uniform"/>
@@ -44,15 +44,14 @@
                 <wv2:WebView2 Name="wv3" Height="650" Width="500" Visibility="Collapsed" Source="https://yiyan.baidu.com"/>
             </StackPanel>
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
-                    Foreground="{StaticResource DangerBrush}" Background="White" MouseDoubleClick="exit_Click"
+                    Foreground="{StaticResource DangerBrush}" Background="White" Click="exit_Click"
                     local:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="-3"
                     HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-8,-8,0"
                     Visibility="{Binding IsMouseOver,RelativeSource={RelativeSource AncestorType=Window},Converter={StaticResource B2VC}}"/>
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
-                    Foreground="{StaticResource PrimaryBrush}" Background="White" MouseDoubleClick="info_Click" MouseWheel="info_MouseWheel"
+                    Foreground="{StaticResource PrimaryBrush}" Background="White" Click="info_Click" MouseWheel="info_MouseWheel"
                     local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-3"
-                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,-8,0,0"
-                    local:WindowAttach.IsDragElement="{Binding ElementName=mainPanel, Path=(local:WindowAttach.IsDragElement)}"/>
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,-8,0,0"/>
         </local:SimplePanel>
     </Border>
 </Window>
