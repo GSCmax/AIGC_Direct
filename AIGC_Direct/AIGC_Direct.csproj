@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources/icon.ico</ApplicationIcon>
-    <Authors>管省超</Authors>
-    <Version>0.0.0.2</Version>
+    <Authors>GSC@GStudio</Authors>
+    <Version>0.0.0.3</Version>
     <Copyright>Copyright © GSC 2023</Copyright>
     <RepositoryUrl>https://github.com/GSCmax/AIGC_Direct</RepositoryUrl>
   </PropertyGroup>
@@ -29,6 +29,21 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1722.45" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
