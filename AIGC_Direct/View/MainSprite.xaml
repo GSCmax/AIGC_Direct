@@ -12,10 +12,10 @@
         ShowInTaskbar="False"
         ShowActivated="False"
         ResizeMode="NoResize"
-        Topmost="True"
         AllowsTransparency="True"
         Background="Transparent"
         UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
         WindowStartupLocation="CenterScreen"
         local:WindowAttach.ShowInTaskManager="False"
         local:WindowAttach.IgnoreAltF4="True"
@@ -43,15 +43,17 @@
                 <wv2:WebView2 Name="wv2" Height="650" Width="500" Visibility="Collapsed" Source="https://www.bing.com/search?q=Bing+AI&amp;showconv=1&amp;FORM=hpcodx"/>
                 <wv2:WebView2 Name="wv3" Height="650" Width="500" Visibility="Collapsed" Source="https://yiyan.baidu.com"/>
             </StackPanel>
-            <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
+            <Button Width="22" Height="22" Style="{StaticResource ButtonIcon}"
+                    Foreground="{StaticResource PrimaryBrush}" Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"
+                    local:BorderElement.CornerRadius="11"
+                    local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-1"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,-8,0,0"/>
+            <Button Width="22" Height="22" Style="{StaticResource ButtonIcon}"
                     Foreground="{StaticResource DangerBrush}" Background="White" Click="exit_Click"
-                    local:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="-3"
+                    local:BorderElement.CornerRadius="11"
+                    local:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="-1"
                     HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-8,-8,0"
                     Visibility="{Binding IsMouseOver,RelativeSource={RelativeSource AncestorType=Window},Converter={StaticResource B2VC}}"/>
-            <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
-                    Foreground="{StaticResource PrimaryBrush}" Background="White" Click="info_Click" MouseWheel="info_MouseWheel"
-                    local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-3"
-                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,-8,0,0"/>
         </local:SimplePanel>
     </Border>
 </Window>

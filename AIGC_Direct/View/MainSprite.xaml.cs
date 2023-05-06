@@ -80,6 +80,11 @@ namespace AIGC_Direct.View
 
         private void info_Click(object sender, RoutedEventArgs e)
         {
+            Topmost = !Topmost;
+        }
+
+        private void info_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
             if (WindowAttach.GetIsDragElement(this))
                 WindowAttach.SetIsDragElement(this, false);
             else

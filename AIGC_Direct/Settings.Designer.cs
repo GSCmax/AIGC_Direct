@@ -70,5 +70,17 @@ namespace AIGC_Direct {
                 this["L"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool T {
+            get {
+                return ((bool)(this["T"]));
+            }
+            set {
+                this["T"] = value;
+            }
+        }
     }
 }
