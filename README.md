@@ -1,7 +1,7 @@
 # AIGC_Direct
 Access AIGCs directly from your desktop.
 
-![图片](https://user-images.githubusercontent.com/8372598/236621653-f2e9d0cd-fe22-4655-9cb8-8c79470431b3.png)         ![图片](https://user-images.githubusercontent.com/8372598/236621610-748168ba-b3d8-4d74-a9f8-d0d32b971434.png)
+![图片](https://user-images.githubusercontent.com/8372598/236658026-1760f214-be86-4ebd-b290-c138fb3f4c48.png)     ![图片](https://user-images.githubusercontent.com/8372598/236658038-35ea1400-04aa-435d-b95d-6a49eab6866e.png)
 
 The i button at topleft is the control button.
 
