@@ -26,8 +26,9 @@ namespace AIGC_Direct
             ms.Opacity = Settings.Default.O;
             ms.Topmost = Settings.Default.T;
             WindowAttach.SetIsDragElement(ms, Settings.Default.L);
+            ms.Activate();
 
-            hkh = new Helpers.HotKeyHelper((ModifierKeys.Control | ModifierKeys.Alt), Key.A, ms, (hotkey) => ms.Topmost = true);
+            hkh = new Helpers.HotKeyHelper((ModifierKeys.Control | ModifierKeys.Alt), Key.A, ms, (hotkey) => { ms.Topmost = true; ms.Activate(); });
         }
 
         protected override void OnExit(ExitEventArgs e)

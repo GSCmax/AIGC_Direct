@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Media.Effects;
 
 namespace AIGC_Direct.View
 {
@@ -113,6 +116,22 @@ namespace AIGC_Direct.View
         private void exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+    }
+
+    public class Bool2EffectConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((bool)value)
+                return (Effect)Application.Current.FindResource("EffectShadow_PrimaryColor");
+            else
+                return (Effect)Application.Current.FindResource("EffectShadow");
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

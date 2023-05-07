@@ -23,9 +23,10 @@
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="B2VC"/>
+        <local:Bool2EffectConverter x:Key="B2EC"/>
     </Window.Resources>
 
-    <Border Background="{StaticResource PrimaryBrush}" Effect="{StaticResource EffectShadow4}" Margin="25">
+    <Border Background="{StaticResource BackgroundBrush}" Effect="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2EC}}" Margin="25">
         <local:SimplePanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="2">
@@ -44,7 +45,7 @@
                 <wv2:WebView2 Name="wv3" Height="650" Width="500" Visibility="Collapsed" Source="https://yiyan.baidu.com"/>
             </StackPanel>
             <Button Width="22" Height="22" Style="{StaticResource ButtonIcon}"
-                    Foreground="{StaticResource PrimaryBrush}" Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"
+                    Foreground="{StaticResource BackgroundBrush}" Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"
                     local:BorderElement.CornerRadius="11"
                     local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-1"
                     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,-8,0,0"/>

@@ -7,7 +7,7 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources/icon.ico</ApplicationIcon>
     <Authors>GSC@GStudio</Authors>
-    <Version>0.0.1.0</Version>
+    <Version>0.0.1.1</Version>
     <Copyright>Copyright © GSC 2023</Copyright>
     <RepositoryUrl>https://github.com/GSCmax/AIGC_Direct</RepositoryUrl>
   </PropertyGroup>
