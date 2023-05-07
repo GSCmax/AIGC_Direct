@@ -1,6 +1,7 @@
 ﻿using AIGC_Direct.View;
 using System;
 using System.Windows;
+using System.Windows.Input;
 
 namespace AIGC_Direct
 {
@@ -10,6 +11,7 @@ namespace AIGC_Direct
     public partial class App : Application
     {
         MainSprite ms;
+        Helpers.HotKeyHelper hkh;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -24,6 +26,8 @@ namespace AIGC_Direct
             ms.Opacity = Settings.Default.O;
             ms.Topmost = Settings.Default.T;
             WindowAttach.SetIsDragElement(ms, Settings.Default.L);
+
+            hkh = new Helpers.HotKeyHelper((ModifierKeys.Control | ModifierKeys.Alt), Key.A, ms, (hotkey) => ms.Topmost = true);
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -36,6 +40,8 @@ namespace AIGC_Direct
             Settings.Default.T = ms.Topmost;
             Settings.Default.L = WindowAttach.GetIsDragElement(ms);
             Settings.Default.Save();
+
+            hkh.Dispose();
         }
     }
 }
