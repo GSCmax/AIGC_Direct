@@ -5,18 +5,20 @@ Access AIGCs directly from your desktop.
 
 The i button at topleft is the control button.
 
-1.Click it to toggle window topmost.
+1.Click it to toggle app topmost.
 
-2.Double click it to toggle window position lock.
+2.Double click it to toggle app position lock.
 
-3.Rolling mouse wheel on it to change window opacity.
+3.Rolling mouse wheel on it to adjust app opacity.
 
-Other skills
+Other skills:
 
 1.Drag at any position to move app.
 
-2.Any time press Ctrl+Alt+A to call app
+2.Any time press Ctrl+Alt+A to call app.
 
-Hotket code from https://github.com/mrousavy/Hotkeys. This code works perfectly.
+Hotket code from https://github.com/mrousavy/Hotkeys
+
+It works perfectly.
 
 ![图片](https://user-images.githubusercontent.com/8372598/236621938-73a61d8c-a009-4eda-875d-b8d871a3056a.png)
