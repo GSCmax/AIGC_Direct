@@ -5,22 +5,20 @@
              xmlns:view="clr-namespace:AIGC_Direct.View">
     <Application.Resources>
         <ResourceDictionary>
-            <Color o:Freeze="True" x:Key="PrimaryColor">#326cf3</Color>
             <Color o:Freeze="True" x:Key="DangerColor">#db3340</Color>
             <Color o:Freeze="True" x:Key="BackgroundColor">#343541</Color>
-            <SolidColorBrush o:Freeze="True" x:Key="PrimaryBrush" Color="{DynamicResource PrimaryColor}"/>
-            <SolidColorBrush o:Freeze="True" x:Key="DangerBrush" Color="{DynamicResource DangerColor}"/>
-            <SolidColorBrush o:Freeze="True" x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}"/>
+            <SolidColorBrush o:Freeze="True" x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>
+            <SolidColorBrush o:Freeze="True" x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
             <Geometry o:Freeze="True" x:Key="InfoGeometry">M505.6512 39.0144c-261.2224 3.4816-470.1184 218.112-466.6368 479.4368 3.4816 261.12 218.112 470.1184 479.3344 466.6368 261.2224-3.4816 470.1184-218.112 466.7392-479.3344C981.504 244.4288 766.8736 35.5328 505.6512 39.0144zM558.08 196.608c48.128 0 62.2592 27.9552 62.2592 59.8016 0 39.8336-31.9488 76.6976-86.3232 76.6976-45.568 0-67.1744-22.9376-65.9456-60.8256C468.0704 240.4352 494.7968 196.608 558.08 196.608zM434.7904 807.6288c-32.8704 0-56.9344-19.968-33.8944-107.6224l37.6832-155.5456c6.5536-24.8832 7.68-34.9184 0-34.9184-9.8304 0-52.5312 17.2032-77.7216 34.2016l-16.384-26.9312c79.9744-66.7648 171.8272-105.8816 211.2512-105.8816 32.8704 0 38.2976 38.912 21.9136 98.6112l-43.2128 163.5328c-7.68 28.8768-4.4032 38.912 3.2768 38.912 9.9328 0 42.1888-11.9808 73.9328-36.9664l18.6368 24.8832C552.5504 777.728 467.6608 807.6288 434.7904 807.6288z</Geometry>
             <Geometry o:Freeze="True" x:Key="ErrorGeometry">M495.469714 0C224.621714 0 0 224.621714 0 495.469714c0 270.884571 224.621714 495.506286 495.469714 495.506286 270.884571 0 495.506286-224.621714 495.506286-495.506286C990.976 224.621714 766.354286 0 495.469714 0z m211.419429 634.221714c19.821714 19.821714 19.821714 46.226286 0 66.048s-46.226286 19.821714-66.048 0l-138.752-138.715428-145.334857 145.334857a51.858286 51.858286 0 0 1-72.667429 0 51.858286 51.858286 0 0 1 0-72.667429l145.334857-145.334857-138.752-138.752c-19.821714-19.821714-19.821714-46.226286 0-66.048s46.262857-19.821714 66.084572 0l138.715428 138.715429 145.371429-145.334857a51.858286 51.858286 0 0 1 72.667428 0 51.858286 51.858286 0 0 1 0 72.667428l-145.371428 145.334857 138.752 138.752z</Geometry>
             <Geometry o:Freeze="True" x:Key="SuccessGeometry">M512.66048 64.64c-247.424 0-448 200.57728-448 448s200.576 448 448 448 448-200.57728 448-448c0-247.424-200.57728-448-448-448z m250.71232 334.86336L480.98176 681.89312c-15.49568 15.49696-40.61952 15.49696-56.11648 0l-162.9184-162.9184c-15.49568-15.49568-15.49568-40.61824 0-56.1152s40.61952-15.49568 56.11648 0l134.85952 134.85952L707.25504 343.3856c15.49568-15.49568 40.61952-15.49568 56.11648 0s15.49696 40.6208 0.00128 56.11776z</Geometry>
             <DropShadowEffect o:Freeze="True" x:Key="EffectShadow" BlurRadius="25" ShadowDepth="8" Direction="270" Color="#000000" Opacity=".2" RenderingBias="Performance"/>
-            <DropShadowEffect o:Freeze="True" x:Key="EffectShadow_PrimaryColor" BlurRadius="25" ShadowDepth="8" Direction="270" Color="{DynamicResource PrimaryColor}" Opacity=".2" RenderingBias="Performance"/>
+            <DropShadowEffect o:Freeze="True" x:Key="EffectShadow_PrimaryColor" BlurRadius="25" ShadowDepth="8" Direction="270" Color="{x:Static SystemParameters.WindowGlassColor}" Opacity=".2" RenderingBias="Performance"/>
             <Style o:Freeze="True" x:Key="RectangleFocusVisual" TargetType="Rectangle">
                 <Setter Property="Margin" Value="-2"/>
                 <Setter Property="Opacity" Value=".6"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
-                <Setter Property="Stroke" Value="{DynamicResource PrimaryBrush}"/>
+                <Setter Property="Stroke" Value="{x:Static SystemParameters.WindowGlassBrush}"/>
                 <Setter Property="StrokeThickness" Value="2"/>
                 <Setter Property="StrokeDashArray" Value="1 1"/>
             </Style>
