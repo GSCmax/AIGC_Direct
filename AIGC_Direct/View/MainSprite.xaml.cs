@@ -139,7 +139,7 @@ namespace AIGC_Direct.View
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (((bool)values[0]) || (Visibility)values[1] == Visibility.Visible || (Visibility)values[2] == Visibility.Visible || (Visibility)values[3] == Visibility.Visible)
+            if ((bool)values[0] || (bool)values[1] || (Visibility)values[2] == Visibility.Visible || (Visibility)values[3] == Visibility.Visible || (Visibility)values[4] == Visibility.Visible)
                 return Visibility.Visible;
             else return Visibility.Collapsed;
         }

@@ -38,6 +38,7 @@
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
+                                <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsActive"/>
                                 <Binding ElementName="wv1" Path="Visibility"/>
                                 <Binding ElementName="wv2" Path="Visibility"/>
                                 <Binding ElementName="wv3" Path="Visibility"/>
@@ -49,6 +50,7 @@
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
+                                <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsActive"/>
                                 <Binding ElementName="wv1" Path="Visibility"/>
                                 <Binding ElementName="wv2" Path="Visibility"/>
                                 <Binding ElementName="wv3" Path="Visibility"/>
