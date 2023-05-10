@@ -134,4 +134,19 @@ namespace AIGC_Direct.View
             throw new NotImplementedException();
         }
     }
+
+    public class IconShowConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (((bool)values[0]) || (Visibility)values[1] == Visibility.Visible || (Visibility)values[2] == Visibility.Visible || (Visibility)values[3] == Visibility.Visible)
+                return Visibility.Visible;
+            else return Visibility.Collapsed;
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

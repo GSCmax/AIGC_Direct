@@ -24,6 +24,7 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="B2VC"/>
         <local:Bool2EffectConverter x:Key="B2EC"/>
+        <local:IconShowConverter x:Key="ISC"/>
     </Window.Resources>
 
     <Border Background="{StaticResource BackgroundBrush}" Effect="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2EC}}" Margin="25">
@@ -34,9 +35,25 @@
                         <Image Source="/AIGC_Direct;component/Resources/chatgpt.png" Stretch="Uniform"/>
                     </Button>
                     <Button Width="45" Height="45" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="bingai_Click" MouseDoubleClick="bingai_MouseDoubleClick" Margin="2">
+                        <Button.Visibility>
+                            <MultiBinding Converter="{StaticResource ISC}">
+                                <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
+                                <Binding ElementName="wv1" Path="Visibility"/>
+                                <Binding ElementName="wv2" Path="Visibility"/>
+                                <Binding ElementName="wv3" Path="Visibility"/>
+                            </MultiBinding>
+                        </Button.Visibility>
                         <Image Source="/AIGC_Direct;component/Resources/bingai.png" Stretch="Uniform"/>
                     </Button>
                     <Button Width="45" Height="45" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="yiyan_Click" MouseDoubleClick="yiyan_MouseDoubleClick" Margin="2">
+                        <Button.Visibility>
+                            <MultiBinding Converter="{StaticResource ISC}">
+                                <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
+                                <Binding ElementName="wv1" Path="Visibility"/>
+                                <Binding ElementName="wv2" Path="Visibility"/>
+                                <Binding ElementName="wv3" Path="Visibility"/>
+                            </MultiBinding>
+                        </Button.Visibility>
                         <Image Source="/AIGC_Direct;component/Resources/yiyan.png" Stretch="Uniform"/>
                     </Button>
                 </StackPanel>
