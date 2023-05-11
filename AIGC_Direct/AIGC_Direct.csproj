@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Resources/icon.ico</ApplicationIcon>
     <Authors>GSC@GStudio</Authors>
-    <Version>0.0.1.2</Version>
+    <Version>0.0.1.3</Version>
     <Copyright>Copyright © GSC 2023</Copyright>
     <RepositoryUrl>https://github.com/GSCmax/AIGC_Direct</RepositoryUrl>
   </PropertyGroup>
