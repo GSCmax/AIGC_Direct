@@ -86,15 +86,19 @@ namespace AIGC_Direct.View
                 {
                     case Key.Up:
                         System.Windows.Window.GetWindow(obj).Top--;
+                        e.Handled = true;
                         break;
                     case Key.Down:
                         System.Windows.Window.GetWindow(obj).Top++;
+                        e.Handled = true;
                         break;
                     case Key.Left:
                         System.Windows.Window.GetWindow(obj).Left--;
+                        e.Handled = true;
                         break;
                     case Key.Right:
                         System.Windows.Window.GetWindow(obj).Left++;
+                        e.Handled = true;
                         break;
                 }
             }
