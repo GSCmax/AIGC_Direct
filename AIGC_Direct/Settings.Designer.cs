@@ -121,7 +121,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("900")]
         public int W {
             get {
                 return ((int)(this["W"]));
@@ -133,7 +133,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("700")]
+        [global::System.Configuration.DefaultSettingValueAttribute("650")]
         public int H {
             get {
                 return ((int)(this["H"]));

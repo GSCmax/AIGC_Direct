@@ -16,16 +16,6 @@ namespace AIGC_Direct.View
         public MainSprite()
         {
             InitializeComponent();
-
-            wv1.Source = new Uri(Settings.Default.chatgpt);
-            wv1.Height = Settings.Default.H;
-            wv1.Width = Settings.Default.W;
-            wv2.Source = new Uri(Settings.Default.bingai);
-            wv2.Height = Settings.Default.H;
-            wv2.Width = Settings.Default.W;
-            wv3.Source = new Uri(Settings.Default.yiyan);
-            wv3.Height = Settings.Default.H;
-            wv3.Width = Settings.Default.W;
         }
 
         private void chatgpt_Click(object sender, RoutedEventArgs e)

@@ -27,10 +27,10 @@
       <Value Profile="(Default)">https://yiyan.baidu.com</Value>
     </Setting>
     <Setting Name="W" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1000</Value>
+      <Value Profile="(Default)">900</Value>
     </Setting>
     <Setting Name="H" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">700</Value>
+      <Value Profile="(Default)">650</Value>
     </Setting>
   </Settings>
 </SettingsFile>

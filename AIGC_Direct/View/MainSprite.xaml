@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AIGC_Direct.View"
+        xmlns:app="clr-namespace:AIGC_Direct"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
         Title="AIGC Direct"
@@ -59,9 +60,12 @@
                         <Image Source="/AIGC_Direct;component/Resources/yiyan.png" Stretch="Uniform"/>
                     </Button>
                 </StackPanel>
-                <wv2:WebView2 Name="wv1" Visibility="Collapsed"/>
-                <wv2:WebView2 Name="wv2" Visibility="Collapsed"/>
-                <wv2:WebView2 Name="wv3" Visibility="Collapsed"/>
+                <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=W}" Height="{Binding Source={x:Static app:Settings.Default}, Path=H}"
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=chatgpt, Mode=OneWay}" Visibility="Collapsed"/>
+                <wv2:WebView2 Name="wv2" Width="{Binding Source={x:Static app:Settings.Default}, Path=W}" Height="{Binding Source={x:Static app:Settings.Default}, Path=H}"
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=bingai, Mode=OneWay}" Visibility="Collapsed"/>
+                <wv2:WebView2 Name="wv3" Width="{Binding Source={x:Static app:Settings.Default}, Path=W}" Height="{Binding Source={x:Static app:Settings.Default}, Path=H}"
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=yiyan, Mode=OneWay}" Visibility="Collapsed"/>
             </StackPanel>
             <Button Width="22" Height="22" Style="{StaticResource ButtonIcon}"
                     Foreground="{StaticResource BackgroundBrush}" Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"
