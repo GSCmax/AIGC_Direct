@@ -59,9 +59,9 @@
                         <Image Source="/AIGC_Direct;component/Resources/yiyan.png" Stretch="Uniform"/>
                     </Button>
                 </StackPanel>
-                <wv2:WebView2 Name="wv1" Height="650" Width="500" Visibility="Collapsed" Source="https://chat.openai.com"/>
-                <wv2:WebView2 Name="wv2" Height="650" Width="500" Visibility="Collapsed" Source="https://www.bing.com/search?q=Bing+AI&amp;showconv=1&amp;FORM=hpcodx"/>
-                <wv2:WebView2 Name="wv3" Height="650" Width="500" Visibility="Collapsed" Source="https://yiyan.baidu.com"/>
+                <wv2:WebView2 Name="wv1" Visibility="Collapsed"/>
+                <wv2:WebView2 Name="wv2" Visibility="Collapsed"/>
+                <wv2:WebView2 Name="wv3" Visibility="Collapsed"/>
             </StackPanel>
             <Button Width="22" Height="22" Style="{StaticResource ButtonIcon}"
                     Foreground="{StaticResource BackgroundBrush}" Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"

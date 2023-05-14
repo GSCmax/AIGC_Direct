@@ -16,6 +16,16 @@ namespace AIGC_Direct.View
         public MainSprite()
         {
             InitializeComponent();
+
+            wv1.Source = new Uri(Settings.Default.chatgpt);
+            wv1.Height = Settings.Default.H;
+            wv1.Width = Settings.Default.W;
+            wv2.Source = new Uri(Settings.Default.bingai);
+            wv2.Height = Settings.Default.H;
+            wv2.Width = Settings.Default.W;
+            wv3.Source = new Uri(Settings.Default.yiyan);
+            wv3.Height = Settings.Default.H;
+            wv3.Width = Settings.Default.W;
         }
 
         private void chatgpt_Click(object sender, RoutedEventArgs e)
@@ -68,17 +78,17 @@ namespace AIGC_Direct.View
 
         private void chatgpt_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(new ProcessStartInfo() { FileName = @"https://chat.openai.com", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo() { FileName = Settings.Default.chatgpt, UseShellExecute = true });
         }
 
         private void bingai_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(new ProcessStartInfo() { FileName = "msedge.exe", Arguments = @"https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo() { FileName = "msedge.exe", Arguments = Settings.Default.bingai, UseShellExecute = true });
         }
 
         private void yiyan_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(new ProcessStartInfo() { FileName = @"https://yiyan.baidu.com", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo() { FileName = Settings.Default.yiyan, UseShellExecute = true });
         }
 
         private void info_Click(object sender, RoutedEventArgs e)

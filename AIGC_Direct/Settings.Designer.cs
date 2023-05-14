@@ -82,5 +82,65 @@ namespace AIGC_Direct {
                 this["T"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://chat.openai.com")]
+        public string chatgpt {
+            get {
+                return ((string)(this["chatgpt"]));
+            }
+            set {
+                this["chatgpt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx")]
+        public string bingai {
+            get {
+                return ((string)(this["bingai"]));
+            }
+            set {
+                this["bingai"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://yiyan.baidu.com")]
+        public string yiyan {
+            get {
+                return ((string)(this["yiyan"]));
+            }
+            set {
+                this["yiyan"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int W {
+            get {
+                return ((int)(this["W"]));
+            }
+            set {
+                this["W"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("700")]
+        public int H {
+            get {
+                return ((int)(this["H"]));
+            }
+            set {
+                this["H"] = value;
+            }
+        }
     }
 }
