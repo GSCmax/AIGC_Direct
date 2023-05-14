@@ -35,7 +35,7 @@ namespace AIGC_Direct
             catch
             {
                 System.Windows.Forms.Application.EnableVisualStyles();
-                System.Windows.Forms.MessageBox.Show("Hotkey (Ctrl+Alt+A) has already been registered.\n热键(Ctrl+Alt+A)已被注册。\nYou can not use hotkey to call the sprite currently.\n您当前无法使用热键呼出此工具。", "AIGC Direct", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                System.Windows.Forms.MessageBox.Show("Hotkey (Ctrl+Alt+A) has already been registered.\nYou can not use hotkey to call the sprite currently.\n\n热键(Ctrl+Alt+A)已被注册。\n您当前无法使用热键呼出此工具。", "AIGC Direct", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             }
         }
 
