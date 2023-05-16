@@ -25,10 +25,13 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="B2VC"/>
         <local:Bool2EffectConverter x:Key="B2EC"/>
+        <local:Bool2BrushConverter x:Key="B2BC"/>
         <local:IconShowConverter x:Key="ISC"/>
     </Window.Resources>
 
-    <Border Background="{StaticResource BackgroundBrush}" Effect="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2EC}}" Margin="25">
+    <Border Background="{StaticResource BackgroundBrush}" Margin="25" BorderThickness="1"
+            BorderBrush="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2BC}}"
+            Effect="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2EC}}">
         <local:SimplePanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="2">

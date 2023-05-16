@@ -124,9 +124,25 @@ namespace AIGC_Direct.View
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if ((bool)value)
-                return (Effect)Application.Current.FindResource("EffectShadow_PrimaryColor");
+                return Application.Current.FindResource("EffectShadow_HighlightColor");
             else
-                return (Effect)Application.Current.FindResource("EffectShadow");
+                return Application.Current.FindResource("EffectShadow");
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Bool2BrushConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((bool)value)
+                return Application.Current.FindResource("HighlightBrush");
+            else
+                return Application.Current.FindResource("TransparentBrush");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
