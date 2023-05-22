@@ -23,6 +23,9 @@
     <Resource Include="Resources\bingai.png">
       <Link>Resources\bingai.png</Link>
     </Resource>
+    <Resource Include="Resources\bard.png">
+      <Link>Resources\bard.png</Link>
+    </Resource>
     <Resource Include="Resources\yiyan.png">
       <Link>Resources\yiyan.png</Link>
     </Resource>

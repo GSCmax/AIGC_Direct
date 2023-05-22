@@ -25,12 +25,14 @@ namespace AIGC_Direct.View
                 wv1.Visibility = Visibility.Collapsed;
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Collapsed;
             }
             else
             {
                 wv1.Visibility = Visibility.Visible;
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -41,28 +43,50 @@ namespace AIGC_Direct.View
                 wv1.Visibility = Visibility.Collapsed;
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Collapsed;
             }
             else
             {
                 wv1.Visibility = Visibility.Collapsed;
                 wv2.Visibility = Visibility.Visible;
                 wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Collapsed;
             }
         }
 
-        private void yiyan_Click(object sender, RoutedEventArgs e)
+        private void bard_Click(object sender, RoutedEventArgs e)
         {
             if (wv3.Visibility == Visibility.Visible)
             {
                 wv1.Visibility = Visibility.Collapsed;
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Collapsed;
             }
             else
             {
                 wv1.Visibility = Visibility.Collapsed;
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Visible;
+                wv4.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void yiyan_Click(object sender, RoutedEventArgs e)
+        {
+            if (wv4.Visibility == Visibility.Visible)
+            {
+                wv1.Visibility = Visibility.Collapsed;
+                wv2.Visibility = Visibility.Collapsed;
+                wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                wv1.Visibility = Visibility.Collapsed;
+                wv2.Visibility = Visibility.Collapsed;
+                wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Visible;
             }
         }
 
@@ -74,6 +98,11 @@ namespace AIGC_Direct.View
         private void bingai_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Process.Start(new ProcessStartInfo() { FileName = "msedge.exe", Arguments = Settings.Default.bingai, UseShellExecute = true });
+        }
+
+        private void bard_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo() { FileName = Settings.Default.bard, UseShellExecute = true });
         }
 
         private void yiyan_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -119,30 +148,14 @@ namespace AIGC_Direct.View
         }
     }
 
-    public class Bool2EffectConverter : IValueConverter
+    public class Bool2ResourceConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if ((bool)value)
-                return Application.Current.FindResource("EffectShadow_HighlightColor");
+                return Application.Current.FindResource(((string)parameter).Split(',')[0]);
             else
-                return Application.Current.FindResource("EffectShadow");
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class Bool2BrushConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if ((bool)value)
-                return Application.Current.FindResource("HighlightBrush");
-            else
-                return Application.Current.FindResource("TransparentBrush");
+                return Application.Current.FindResource(((string)parameter).Split(',')[1]);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -155,7 +168,11 @@ namespace AIGC_Direct.View
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((bool)values[0] || (bool)values[1] || (Visibility)values[2] == Visibility.Visible || (Visibility)values[3] == Visibility.Visible || (Visibility)values[4] == Visibility.Visible)
+            if ((bool)values[0] || (bool)values[1]
+                || (Visibility)values[2] == Visibility.Visible
+                || (Visibility)values[3] == Visibility.Visible
+                || (Visibility)values[4] == Visibility.Visible
+                || (Visibility)values[5] == Visibility.Visible)
                 return Visibility.Visible;
             else return Visibility.Collapsed;
         }

@@ -23,6 +23,9 @@
     <Setting Name="bingai" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://www.bing.com/search?q=Bing+AI&amp;showconv=1&amp;FORM=hpcodx</Value>
     </Setting>
+    <Setting Name="bard" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://bard.google.com</Value>
+    </Setting>
     <Setting Name="yiyan" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://yiyan.baidu.com</Value>
     </Setting>
