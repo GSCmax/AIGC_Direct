@@ -26,7 +26,7 @@ namespace AIGC_Direct
             ms.Opacity = Settings.Default.O;
             ms.Topmost = Settings.Default.T;
             WindowAttach.SetIsDragElement(ms, Settings.Default.L);
-            ms.Activate();
+            //ms.Activate();
 
             try
             {
