@@ -90,7 +90,7 @@
                               Source="{Binding Source={x:Static app:Settings.Default}, Path=yiyan, Mode=OneWay}" Visibility="Collapsed"/>
             </StackPanel>
             <Button Width="22" Height="22" Style="{StaticResource ButtonIcon}"
-                    Foreground="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,BackgroundBrush'}"
+                    Foreground="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,BackgroundBrush'}"
                     Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"
                     local:BorderElement.CornerRadius="11"
                     local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-1"
