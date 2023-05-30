@@ -20,7 +20,9 @@
         WindowStartupLocation="CenterScreen"
         local:WindowAttach.ShowInTaskManager="False"
         local:WindowAttach.IgnoreAltF4="True"
-        local:WindowAttach.HideWhenClosing="True">
+        local:WindowAttach.HideWhenClosing="True"
+        local:WindowAttach.SnapDistance="0"
+        local:WindowAttach.SnapToScreenEdge="True">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="B2VC"/>
