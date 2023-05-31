@@ -35,7 +35,7 @@ namespace AIGC_Direct.View
                     ctl.PreviewMouseLeftButtonDown += DragElement_PreviewMouseLeftButtonDown;
                     ctl.PreviewMouseMove += DragElement_PreviewMouseMove;
                     ctl.PreviewMouseLeftButtonUp += DragElement_PreviewMouseLeftButtonUp;
-                    ctl.KeyDown += DragElement_KeyDown;
+                    //ctl.KeyDown += DragElement_KeyDown;
                 }
                 else
                 {
@@ -44,7 +44,7 @@ namespace AIGC_Direct.View
                     ctl.PreviewMouseLeftButtonDown -= DragElement_PreviewMouseLeftButtonDown;
                     ctl.PreviewMouseMove -= DragElement_PreviewMouseMove;
                     ctl.PreviewMouseLeftButtonUp -= DragElement_PreviewMouseLeftButtonUp;
-                    ctl.KeyDown -= DragElement_KeyDown;
+                    //ctl.KeyDown -= DragElement_KeyDown;
                 }
             }
         }
