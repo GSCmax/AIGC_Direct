@@ -91,22 +91,26 @@ namespace AIGC_Direct.View
 
         private void chatgpt_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(new ProcessStartInfo() { FileName = Settings.Default.chatgpt, UseShellExecute = true });
+            //Process.Start(new ProcessStartInfo() { FileName = Settings.Default.chatgpt, UseShellExecute = true });
+            wv1.CoreWebView2.Navigate(Settings.Default.chatgpt);
         }
 
         private void bingai_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(new ProcessStartInfo() { FileName = "msedge.exe", Arguments = Settings.Default.bingai, UseShellExecute = true });
+            //Process.Start(new ProcessStartInfo() { FileName = "msedge.exe", Arguments = Settings.Default.bingai, UseShellExecute = true });
+            wv2.CoreWebView2.Navigate(Settings.Default.bingai);
         }
 
         private void bard_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(new ProcessStartInfo() { FileName = Settings.Default.bard, UseShellExecute = true });
+            //Process.Start(new ProcessStartInfo() { FileName = Settings.Default.bard, UseShellExecute = true });
+            wv3.CoreWebView2.Navigate(Settings.Default.bard);
         }
 
         private void yiyan_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(new ProcessStartInfo() { FileName = Settings.Default.yiyan, UseShellExecute = true });
+            //Process.Start(new ProcessStartInfo() { FileName = Settings.Default.yiyan, UseShellExecute = true });
+            wv4.CoreWebView2.Navigate(Settings.Default.yiyan);
         }
 
         private void info_Click(object sender, RoutedEventArgs e)
