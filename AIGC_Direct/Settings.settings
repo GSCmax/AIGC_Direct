@@ -6,7 +6,13 @@
       <Value Profile="(Default)">25</Value>
     </Setting>
     <Setting Name="Y" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="W" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1200</Value>
+    </Setting>
+    <Setting Name="H" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">700</Value>
     </Setting>
     <Setting Name="O" Type="System.Double" Scope="User">
       <Value Profile="(Default)">1</Value>
@@ -29,11 +35,8 @@
     <Setting Name="yiyan" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://yiyan.baidu.com</Value>
     </Setting>
-    <Setting Name="W" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1200</Value>
-    </Setting>
-    <Setting Name="H" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">700</Value>
+    <Setting Name="HotKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">None,Escape</Value>
     </Setting>
   </Settings>
 </SettingsFile>

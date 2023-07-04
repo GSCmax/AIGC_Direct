@@ -37,13 +37,37 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
         public double Y {
             get {
                 return ((double)(this["Y"]));
             }
             set {
                 this["Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1200")]
+        public int W {
+            get {
+                return ((int)(this["W"]));
+            }
+            set {
+                this["W"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("700")]
+        public int H {
+            get {
+                return ((int)(this["H"]));
+            }
+            set {
+                this["H"] = value;
             }
         }
         
@@ -133,25 +157,13 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1200")]
-        public int W {
+        [global::System.Configuration.DefaultSettingValueAttribute("None,Escape")]
+        public string HotKey {
             get {
-                return ((int)(this["W"]));
+                return ((string)(this["HotKey"]));
             }
             set {
-                this["W"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("700")]
-        public int H {
-            get {
-                return ((int)(this["H"]));
-            }
-            set {
-                this["H"] = value;
+                this["HotKey"] = value;
             }
         }
     }
