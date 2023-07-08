@@ -157,7 +157,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("None,Escape")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Control|Alt,A")]
         public string HotKey {
             get {
                 return ((string)(this["HotKey"]));

@@ -36,7 +36,7 @@
       <Value Profile="(Default)">https://yiyan.baidu.com</Value>
     </Setting>
     <Setting Name="HotKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">None,Escape</Value>
+      <Value Profile="(Default)">Control|Alt,A</Value>
     </Setting>
   </Settings>
 </SettingsFile>
