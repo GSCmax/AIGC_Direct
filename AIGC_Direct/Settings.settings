@@ -8,19 +8,19 @@
     <Setting Name="Y" Type="System.Double" Scope="User">
       <Value Profile="(Default)">25</Value>
     </Setting>
-    <Setting Name="W" Type="System.Int32" Scope="User">
+    <Setting Name="Width" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1200</Value>
     </Setting>
-    <Setting Name="H" Type="System.Int32" Scope="User">
+    <Setting Name="Height" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">700</Value>
     </Setting>
-    <Setting Name="O" Type="System.Double" Scope="User">
+    <Setting Name="Opacity" Type="System.Double" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="L" Type="System.Boolean" Scope="User">
+    <Setting Name="CanDrag" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="T" Type="System.Boolean" Scope="User">
+    <Setting Name="Topmost" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="chatgpt" Type="System.String" Scope="User">

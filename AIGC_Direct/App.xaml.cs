@@ -23,9 +23,9 @@ namespace AIGC_Direct
 
             ms.Left = Settings.Default.X;
             ms.Top = Settings.Default.Y;
-            ms.Opacity = Settings.Default.O;
-            ms.Topmost = Settings.Default.T;
-            WindowAttach.SetIsDragElement(ms, Settings.Default.L);
+            ms.Opacity = Settings.Default.Opacity;
+            ms.Topmost = Settings.Default.Topmost;
+            WindowAttach.SetIsDragElement(ms, Settings.Default.CanDrag);
             //ms.Activate();
 
             string[] HotKey_ModifierKeys = Settings.Default.HotKey.Split(',')[0].Split('|');
@@ -65,9 +65,9 @@ namespace AIGC_Direct
 
             Settings.Default.X = ms.Left;
             Settings.Default.Y = ms.Top;
-            Settings.Default.O = Math.Round(ms.Opacity, 2);
-            Settings.Default.T = ms.Topmost;
-            Settings.Default.L = WindowAttach.GetIsDragElement(ms);
+            Settings.Default.Opacity = Math.Round(ms.Opacity, 2);
+            Settings.Default.Topmost = ms.Topmost;
+            Settings.Default.CanDrag = WindowAttach.GetIsDragElement(ms);
             Settings.Default.Save();
 
             hkh.Dispose();

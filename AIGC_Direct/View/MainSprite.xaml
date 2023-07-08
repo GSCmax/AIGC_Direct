@@ -80,13 +80,13 @@
                         <Image Source="/AIGC_Direct;component/Resources/yiyan.png" Stretch="Uniform"/>
                     </Button>
                 </StackPanel>
-                <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=W}" Height="{Binding Source={x:Static app:Settings.Default}, Path=H}"
+                <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
                               Source="{Binding Source={x:Static app:Settings.Default}, Path=chatgpt, Mode=OneWay}" Visibility="Collapsed"/>
-                <wv2:WebView2 Name="wv2" Width="{Binding Source={x:Static app:Settings.Default}, Path=W}" Height="{Binding Source={x:Static app:Settings.Default}, Path=H}"
+                <wv2:WebView2 Name="wv2" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
                               Source="{Binding Source={x:Static app:Settings.Default}, Path=bingai, Mode=OneWay}" Visibility="Collapsed"/>
-                <wv2:WebView2 Name="wv3" Width="{Binding Source={x:Static app:Settings.Default}, Path=W}" Height="{Binding Source={x:Static app:Settings.Default}, Path=H}"
+                <wv2:WebView2 Name="wv3" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
                               Source="{Binding Source={x:Static app:Settings.Default}, Path=bard, Mode=OneWay}" Visibility="Collapsed"/>
-                <wv2:WebView2 Name="wv4" Width="{Binding Source={x:Static app:Settings.Default}, Path=W}" Height="{Binding Source={x:Static app:Settings.Default}, Path=H}"
+                <wv2:WebView2 Name="wv4" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
                               Source="{Binding Source={x:Static app:Settings.Default}, Path=yiyan, Mode=OneWay}" Visibility="Collapsed"/>
             </StackPanel>
             <Button Width="22" Height="22" Style="{StaticResource ButtonIcon}"

@@ -50,60 +50,60 @@ namespace AIGC_Direct {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1200")]
-        public int W {
+        public int Width {
             get {
-                return ((int)(this["W"]));
+                return ((int)(this["Width"]));
             }
             set {
-                this["W"] = value;
+                this["Width"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("700")]
-        public int H {
+        public int Height {
             get {
-                return ((int)(this["H"]));
+                return ((int)(this["Height"]));
             }
             set {
-                this["H"] = value;
+                this["Height"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public double O {
+        public double Opacity {
             get {
-                return ((double)(this["O"]));
+                return ((double)(this["Opacity"]));
             }
             set {
-                this["O"] = value;
+                this["Opacity"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool L {
+        public bool CanDrag {
             get {
-                return ((bool)(this["L"]));
+                return ((bool)(this["CanDrag"]));
             }
             set {
-                this["L"] = value;
+                this["CanDrag"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool T {
+        public bool Topmost {
             get {
-                return ((bool)(this["T"]));
+                return ((bool)(this["Topmost"]));
             }
             set {
-                this["T"] = value;
+                this["Topmost"] = value;
             }
         }
         
