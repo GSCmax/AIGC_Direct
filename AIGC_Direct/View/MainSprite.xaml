@@ -110,10 +110,10 @@
                     </MultiBinding>
                 </Button.Visibility>
             </Button>
-            <Line X1="49" Y1="14" X2="49" Y2="39" Stroke="{StaticResource HighlightBrush}" StrokeThickness="4" Visibility="{Binding ElementName=wv1, Path=Visibility}" IsHitTestVisible="False"/>
-            <Line X1="49" Y1="63" X2="49" Y2="88" Stroke="{StaticResource HighlightBrush}" StrokeThickness="4" Visibility="{Binding ElementName=wv2, Path=Visibility}" IsHitTestVisible="False"/>
-            <Line X1="49" Y1="112" X2="49" Y2="137" Stroke="{StaticResource HighlightBrush}" StrokeThickness="4" Visibility="{Binding ElementName=wv3, Path=Visibility}" IsHitTestVisible="False"/>
-            <Line X1="49" Y1="161" X2="49" Y2="186" Stroke="{StaticResource HighlightBrush}" StrokeThickness="4" Visibility="{Binding ElementName=wv4, Path=Visibility}" IsHitTestVisible="False"/>
+            <Line X1="51" Y1="14" X2="51" Y2="39" Stroke="{StaticResource HighlightBrush}" StrokeThickness="2" Visibility="{Binding ElementName=wv1, Path=Visibility}" IsHitTestVisible="False"/>
+            <Line X1="51" Y1="63" X2="51" Y2="88" Stroke="{StaticResource HighlightBrush}" StrokeThickness="2" Visibility="{Binding ElementName=wv2, Path=Visibility}" IsHitTestVisible="False"/>
+            <Line X1="51" Y1="112" X2="51" Y2="137" Stroke="{StaticResource HighlightBrush}" StrokeThickness="2" Visibility="{Binding ElementName=wv3, Path=Visibility}" IsHitTestVisible="False"/>
+            <Line X1="51" Y1="161" X2="51" Y2="186" Stroke="{StaticResource HighlightBrush}" StrokeThickness="2" Visibility="{Binding ElementName=wv4, Path=Visibility}" IsHitTestVisible="False"/>
         </local:SimplePanel>
     </Border>
 </Window>
