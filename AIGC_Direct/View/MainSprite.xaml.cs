@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace AIGC_Direct.View
 {
@@ -16,7 +17,7 @@ namespace AIGC_Direct.View
             InitializeComponent();
         }
 
-        private void chatgpt_Click(object sender, RoutedEventArgs e)
+        private void link1_Click(object sender, RoutedEventArgs e)
         {
             if (wv1.Visibility == Visibility.Visible)
             {
@@ -34,7 +35,7 @@ namespace AIGC_Direct.View
             }
         }
 
-        private void copilot_Click(object sender, RoutedEventArgs e)
+        private void link2_Click(object sender, RoutedEventArgs e)
         {
             if (wv2.Visibility == Visibility.Visible)
             {
@@ -52,7 +53,7 @@ namespace AIGC_Direct.View
             }
         }
 
-        private void gemini_Click(object sender, RoutedEventArgs e)
+        private void link3_Click(object sender, RoutedEventArgs e)
         {
             if (wv3.Visibility == Visibility.Visible)
             {
@@ -70,7 +71,7 @@ namespace AIGC_Direct.View
             }
         }
 
-        private void yiyan_Click(object sender, RoutedEventArgs e)
+        private void link4_Click(object sender, RoutedEventArgs e)
         {
             if (wv4.Visibility == Visibility.Visible)
             {
@@ -88,24 +89,24 @@ namespace AIGC_Direct.View
             }
         }
 
-        private void chatgpt_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void link1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            wv1.CoreWebView2.Navigate(Settings.Default.chatgpt);
+            wv1.CoreWebView2.Navigate(Settings.Default.link1);
         }
 
-        private void copilot_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void link2_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            wv2.CoreWebView2.Navigate(Settings.Default.copilot);
+            wv2.CoreWebView2.Navigate(Settings.Default.link2);
         }
 
-        private void gemini_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void link3_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            wv3.CoreWebView2.Navigate(Settings.Default.gemini);
+            wv3.CoreWebView2.Navigate(Settings.Default.link3);
         }
 
-        private void yiyan_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void link4_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            wv4.CoreWebView2.Navigate(Settings.Default.yiyan);
+            wv4.CoreWebView2.Navigate(Settings.Default.link4);
         }
 
         private void info_Click(object sender, RoutedEventArgs e)
@@ -147,6 +148,48 @@ namespace AIGC_Direct.View
     }
 
     #region Converters
+    public class BorderClipConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (values.Length == 3 && values[0] is double width && values[1] is double height && values[2] is CornerRadius radius)
+            {
+                if (width < double.Epsilon || height < double.Epsilon)
+                {
+                    return Geometry.Empty;
+                }
+
+                var clip = new PathGeometry
+                {
+                    Figures = new PathFigureCollection
+                {
+                    new(new Point(radius.TopLeft, 0), new PathSegment[]
+                    {
+                        new LineSegment(new Point(width - radius.TopRight, 0), false),
+                        new ArcSegment(new Point(width, radius.TopRight), new Size(radius.TopRight, radius.TopRight), 90, false, SweepDirection.Clockwise, false),
+                        new LineSegment(new Point(width, height - radius.BottomRight), false),
+                        new ArcSegment(new Point(width - radius.BottomRight, height), new Size(radius.BottomRight, radius.BottomRight), 90, false, SweepDirection.Clockwise, false),
+                        new LineSegment(new Point(radius.BottomLeft, height), false),
+                        new ArcSegment(new Point(0, height - radius.BottomLeft), new Size(radius.BottomLeft, radius.BottomLeft), 90, false, SweepDirection.Clockwise, false),
+                        new LineSegment(new Point(0, radius.TopLeft), false),
+                        new ArcSegment(new Point(radius.TopLeft, 0), new Size(radius.TopLeft, radius.TopLeft), 90, false, SweepDirection.Clockwise, false),
+                    }, false)
+                }
+                };
+                clip.Freeze();
+
+                return clip;
+            }
+
+            return DependencyProperty.UnsetValue;
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public class Bool2ResourceConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -214,6 +257,19 @@ namespace AIGC_Direct.View
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Link2FaviconConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return $"https://www.google.com/s2/favicons?domain={value}&sz=40";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

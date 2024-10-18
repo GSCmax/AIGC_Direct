@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:AIGC_Direct.View"
         xmlns:app="clr-namespace:AIGC_Direct"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
-        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         mc:Ignorable="d"
         Title="AIGC Direct"
         SizeToContent="WidthAndHeight"
@@ -31,6 +30,7 @@
         <local:IconShowConverter x:Key="ISC"/>
         <local:ExitIconShowConverter x:Key="EISC"/>
         <local:CornerRadiusSelConverter x:Key="CRSC"/>
+        <local:Link2FaviconConverter x:Key="L2FC"/>
     </Window.Resources>
 
     <Border Background="{StaticResource BackgroundBrush}" Margin="25" BorderThickness="1"
@@ -47,10 +47,10 @@
         <local:SimplePanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="2">
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" local:BorderElement.CornerRadius="20" Click="chatgpt_Click" MouseDoubleClick="chatgpt_MouseDoubleClick" Margin="2">
-                        <Image Source="{svgc:SvgImage Source='https://cdn.oaistatic.com/assets/favicon-o20kmmos.svg'}" Margin="4" Stretch="Uniform"/>
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link1_Click" MouseDoubleClick="link1_MouseDoubleClick" Margin="2">
+                        <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link1, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin1, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" local:BorderElement.CornerRadius="20" Click="copilot_Click" MouseDoubleClick="copilot_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link2_Click" MouseDoubleClick="link2_MouseDoubleClick" Margin="2">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -61,9 +61,9 @@
                                 <Binding ElementName="wv4" Path="Visibility"/>
                             </MultiBinding>
                         </Button.Visibility>
-                        <Image Source="{svgc:SvgImage Source='https://studiostaticassetsprod.azureedge.net/bundle-cmc/favicon.svg'}" Margin="7" Stretch="Uniform"/>
+                        <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link2, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin2, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" local:BorderElement.CornerRadius="20" Click="gemini_Click" MouseDoubleClick="gemini_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link3_Click" MouseDoubleClick="link3_MouseDoubleClick" Margin="2">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -74,9 +74,9 @@
                                 <Binding ElementName="wv4" Path="Visibility"/>
                             </MultiBinding>
                         </Button.Visibility>
-                        <Image Source="{svgc:SvgImage Source='https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg'}" Margin="3" Stretch="Uniform"/>
+                        <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link3, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin3, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" local:BorderElement.CornerRadius="20" Click="yiyan_Click" MouseDoubleClick="yiyan_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link4_Click" MouseDoubleClick="link4_MouseDoubleClick" Margin="2">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -87,17 +87,17 @@
                                 <Binding ElementName="wv4" Path="Visibility"/>
                             </MultiBinding>
                         </Button.Visibility>
-                        <Image Source="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico" Margin="5" Stretch="Uniform"/>
+                        <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link4, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin4, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
                 </StackPanel>
                 <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=chatgpt, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link1, Mode=OneWay}" Visibility="Collapsed"/>
                 <wv2:WebView2 Name="wv2" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=copilot, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link2, Mode=OneWay}" Visibility="Collapsed"/>
                 <wv2:WebView2 Name="wv3" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=gemini, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link3, Mode=OneWay}" Visibility="Collapsed"/>
                 <wv2:WebView2 Name="wv4" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=yiyan, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link4, Mode=OneWay}" Visibility="Collapsed"/>
             </StackPanel>
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
                     Foreground="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,BackgroundBrush'}"

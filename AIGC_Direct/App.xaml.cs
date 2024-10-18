@@ -10,8 +10,8 @@ namespace AIGC_Direct
     /// </summary>
     public partial class App : Application
     {
-        MainSprite ms;
-        Helpers.HotKeyHelper hkh;
+        MainSprite? ms;
+        Helpers.HotKeyHelper? hkh;
 
         protected override void OnStartup(StartupEventArgs e)
         {

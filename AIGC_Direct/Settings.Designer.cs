@@ -49,7 +49,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1200")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1100")]
         public int Width {
             get {
                 return ((int)(this["Width"]));
@@ -122,84 +122,120 @@ namespace AIGC_Direct {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://chatgpt.com")]
-        public string chatgpt {
+        public string link1 {
             get {
-                return ((string)(this["chatgpt"]));
+                return ((string)(this["link1"]));
             }
             set {
-                this["chatgpt"] = value;
+                this["link1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://copilot.microsoft.com")]
-        public string copilot {
+        public string link2 {
             get {
-                return ((string)(this["copilot"]));
+                return ((string)(this["link2"]));
             }
             set {
-                this["copilot"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://gemini.google.com/app")]
-        public string gemini {
-            get {
-                return ((string)(this["gemini"]));
-            }
-            set {
-                this["gemini"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://yiyan.baidu.com")]
-        public string yiyan {
-            get {
-                return ((string)(this["yiyan"]));
-            }
-            set {
-                this["yiyan"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://claude.ai")]
-        public string claude {
-            get {
-                return ((string)(this["claude"]));
-            }
-            set {
-                this["claude"] = value;
+                this["link2"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://zhida.zhihu.com")]
-        public string zhida {
+        public string link3 {
             get {
-                return ((string)(this["zhida"]));
+                return ((string)(this["link3"]));
             }
             set {
-                this["zhida"] = value;
+                this["link3"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://kimi.moonshot.cn")]
-        public string kimi {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://claude.ai")]
+        public string link4 {
             get {
-                return ((string)(this["kimi"]));
+                return ((string)(this["link4"]));
             }
             set {
-                this["kimi"] = value;
+                this["link4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://yiyan.baidu.com")]
+        public string link5 {
+            get {
+                return ((string)(this["link5"]));
+            }
+            set {
+                this["link5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int margin1 {
+            get {
+                return ((int)(this["margin1"]));
+            }
+            set {
+                this["margin1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int margin2 {
+            get {
+                return ((int)(this["margin2"]));
+            }
+            set {
+                this["margin2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int margin3 {
+            get {
+                return ((int)(this["margin3"]));
+            }
+            set {
+                this["margin3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int margin4 {
+            get {
+                return ((int)(this["margin4"]));
+            }
+            set {
+                this["margin4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int margin5 {
+            get {
+                return ((int)(this["margin5"]));
+            }
+            set {
+                this["margin5"] = value;
             }
         }
     }

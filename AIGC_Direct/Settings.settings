@@ -9,7 +9,7 @@
       <Value Profile="(Default)">25</Value>
     </Setting>
     <Setting Name="Width" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1200</Value>
+      <Value Profile="(Default)">1100</Value>
     </Setting>
     <Setting Name="Height" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">700</Value>
@@ -26,26 +26,35 @@
     <Setting Name="HotKey" Type="System.String" Scope="User">
       <Value Profile="(Default)">Control|Alt,A</Value>
     </Setting>
-    <Setting Name="chatgpt" Type="System.String" Scope="User">
+    <Setting Name="link1" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://chatgpt.com</Value>
     </Setting>
-    <Setting Name="copilot" Type="System.String" Scope="User">
+    <Setting Name="link2" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://copilot.microsoft.com</Value>
     </Setting>
-    <Setting Name="gemini" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://gemini.google.com/app</Value>
-    </Setting>
-    <Setting Name="yiyan" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://yiyan.baidu.com</Value>
-    </Setting>
-    <Setting Name="claude" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://claude.ai</Value>
-    </Setting>
-    <Setting Name="zhida" Type="System.String" Scope="User">
+    <Setting Name="link3" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://zhida.zhihu.com</Value>
     </Setting>
-    <Setting Name="kimi" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://kimi.moonshot.cn</Value>
+    <Setting Name="link4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://claude.ai</Value>
+    </Setting>
+    <Setting Name="link5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://yiyan.baidu.com</Value>
+    </Setting>
+    <Setting Name="margin1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="margin2" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="margin3" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="margin4" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="margin5" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>
