@@ -289,8 +289,8 @@ namespace AIGC_Direct.View
                 && (Visibility)values[2] != Visibility.Visible
                 && (Visibility)values[3] != Visibility.Visible
                 && (Visibility)values[4] != Visibility.Visible)
-                return new CornerRadius(24);
-            else return new CornerRadius(24, 0, 0, 24);
+                return new CornerRadius(0, 24, 24, 24);
+            else return new CornerRadius(0, 0, 0, 24);
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
