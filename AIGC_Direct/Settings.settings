@@ -23,20 +23,29 @@
     <Setting Name="Topmost" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="HotKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Control|Alt,A</Value>
+    </Setting>
     <Setting Name="chatgpt" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://chat.openai.com</Value>
+      <Value Profile="(Default)">https://chatgpt.com</Value>
     </Setting>
-    <Setting Name="bingai" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.bing.com/search?q=Bing+AI&amp;showconv=1&amp;FORM=hpcodx</Value>
+    <Setting Name="copilot" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://copilot.microsoft.com</Value>
     </Setting>
-    <Setting Name="bard" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://bard.google.com</Value>
+    <Setting Name="gemini" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://gemini.google.com/app</Value>
     </Setting>
     <Setting Name="yiyan" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://yiyan.baidu.com</Value>
     </Setting>
-    <Setting Name="HotKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Control|Alt,A</Value>
+    <Setting Name="claude" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://claude.ai</Value>
+    </Setting>
+    <Setting Name="zhida" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://zhida.zhihu.com</Value>
+    </Setting>
+    <Setting Name="kimi" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://kimi.moonshot.cn</Value>
     </Setting>
   </Settings>
 </SettingsFile>

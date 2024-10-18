@@ -18,22 +18,11 @@
     <Resource Include="Resources\icon.ico">
       <Link>Resources\icon.ico</Link>
     </Resource>
-    <Resource Include="Resources\chatgpt.png">
-      <Link>Resources\chatgpt.png</Link>
-    </Resource>
-    <Resource Include="Resources\bingai.png">
-      <Link>Resources\bingai.png</Link>
-    </Resource>
-    <Resource Include="Resources\bard.png">
-      <Link>Resources\bard.png</Link>
-    </Resource>
-    <Resource Include="Resources\yiyan.png">
-      <Link>Resources\yiyan.png</Link>
-    </Resource>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1722.45" />
+    <PackageReference Include="SharpVectors.Wpf" Version="1.8.4.2" />
   </ItemGroup>
 
   <ItemGroup>

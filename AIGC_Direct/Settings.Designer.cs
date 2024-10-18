@@ -12,7 +12,7 @@ namespace AIGC_Direct {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -109,7 +109,19 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://chat.openai.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Control|Alt,A")]
+        public string HotKey {
+            get {
+                return ((string)(this["HotKey"]));
+            }
+            set {
+                this["HotKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://chatgpt.com")]
         public string chatgpt {
             get {
                 return ((string)(this["chatgpt"]));
@@ -121,25 +133,25 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx")]
-        public string bingai {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://copilot.microsoft.com")]
+        public string copilot {
             get {
-                return ((string)(this["bingai"]));
+                return ((string)(this["copilot"]));
             }
             set {
-                this["bingai"] = value;
+                this["copilot"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://bard.google.com")]
-        public string bard {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://gemini.google.com/app")]
+        public string gemini {
             get {
-                return ((string)(this["bard"]));
+                return ((string)(this["gemini"]));
             }
             set {
-                this["bard"] = value;
+                this["gemini"] = value;
             }
         }
         
@@ -157,13 +169,37 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Control|Alt,A")]
-        public string HotKey {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://claude.ai")]
+        public string claude {
             get {
-                return ((string)(this["HotKey"]));
+                return ((string)(this["claude"]));
             }
             set {
-                this["HotKey"] = value;
+                this["claude"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://zhida.zhihu.com")]
+        public string zhida {
+            get {
+                return ((string)(this["zhida"]));
+            }
+            set {
+                this["zhida"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://kimi.moonshot.cn")]
+        public string kimi {
+            get {
+                return ((string)(this["kimi"]));
+            }
+            set {
+                this["kimi"] = value;
             }
         }
     }

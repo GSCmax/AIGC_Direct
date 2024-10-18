@@ -34,7 +34,7 @@ namespace AIGC_Direct.View
             }
         }
 
-        private void bingai_Click(object sender, RoutedEventArgs e)
+        private void copilot_Click(object sender, RoutedEventArgs e)
         {
             if (wv2.Visibility == Visibility.Visible)
             {
@@ -52,7 +52,7 @@ namespace AIGC_Direct.View
             }
         }
 
-        private void bard_Click(object sender, RoutedEventArgs e)
+        private void gemini_Click(object sender, RoutedEventArgs e)
         {
             if (wv3.Visibility == Visibility.Visible)
             {
@@ -90,25 +90,21 @@ namespace AIGC_Direct.View
 
         private void chatgpt_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //Process.Start(new ProcessStartInfo() { FileName = Settings.Default.chatgpt, UseShellExecute = true });
             wv1.CoreWebView2.Navigate(Settings.Default.chatgpt);
         }
 
-        private void bingai_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void copilot_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //Process.Start(new ProcessStartInfo() { FileName = "msedge.exe", Arguments = Settings.Default.bingai, UseShellExecute = true });
-            wv2.CoreWebView2.Navigate(Settings.Default.bingai);
+            wv2.CoreWebView2.Navigate(Settings.Default.copilot);
         }
 
-        private void bard_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void gemini_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //Process.Start(new ProcessStartInfo() { FileName = Settings.Default.bard, UseShellExecute = true });
-            wv3.CoreWebView2.Navigate(Settings.Default.bard);
+            wv3.CoreWebView2.Navigate(Settings.Default.gemini);
         }
 
         private void yiyan_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //Process.Start(new ProcessStartInfo() { FileName = Settings.Default.yiyan, UseShellExecute = true });
             wv4.CoreWebView2.Navigate(Settings.Default.yiyan);
         }
 
@@ -150,6 +146,7 @@ namespace AIGC_Direct.View
         }
     }
 
+    #region Converters
     public class Bool2ResourceConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -203,4 +200,5 @@ namespace AIGC_Direct.View
             throw new NotImplementedException();
         }
     }
+    #endregion
 }
