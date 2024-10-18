@@ -127,7 +127,7 @@
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
                     Foreground="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,BackgroundBrush'}"
                     Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"
-                    local:BorderElement.CornerRadius="9" ToolTip="左键单击切换置顶状态&#x0a;左键双击切换位置锁定&#x0a;滚轮调整透明度"
+                    local:BorderElement.CornerRadius="9" ToolTip="单击切换置顶状态&#x0a;双击切换位置锁定&#x0a;滚轮调整透明度"
                     local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-1"
                     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-5,-5,0,0"/>
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
