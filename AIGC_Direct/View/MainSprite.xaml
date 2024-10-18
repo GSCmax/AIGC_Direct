@@ -32,16 +32,16 @@
         <local:ExitIconShowConverter x:Key="EISC"/>
     </Window.Resources>
 
-    <Border Background="{StaticResource BackgroundBrush}" Margin="25" BorderThickness="1" CornerRadius="8"
+    <Border Background="{StaticResource BackgroundBrush}" Margin="25" BorderThickness="1" CornerRadius="24"
             BorderBrush="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,TransparentBrush'}"
             Effect="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='EffectShadow_HighlightColor,EffectShadow'}">
         <local:SimplePanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="2">
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="chatgpt_Click" MouseDoubleClick="chatgpt_MouseDoubleClick" Margin="2">
-                        <Image Source="{svgc:SvgImage Source='https://cdn.oaistatic.com/assets/favicon-o20kmmos.svg'}" Margin="0" Stretch="Uniform"/>
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" local:BorderElement.CornerRadius="20" Click="chatgpt_Click" MouseDoubleClick="chatgpt_MouseDoubleClick" Margin="2">
+                        <Image Source="{svgc:SvgImage Source='https://cdn.oaistatic.com/assets/favicon-o20kmmos.svg'}" Margin="4" Stretch="Uniform"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="copilot_Click" MouseDoubleClick="copilot_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" local:BorderElement.CornerRadius="20" Click="copilot_Click" MouseDoubleClick="copilot_MouseDoubleClick" Margin="2">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -52,9 +52,9 @@
                                 <Binding ElementName="wv4" Path="Visibility"/>
                             </MultiBinding>
                         </Button.Visibility>
-                        <Image Source="{svgc:SvgImage Source='https://studiostaticassetsprod.azureedge.net/bundle-cmc/favicon.svg'}" Margin="5" Stretch="Uniform"/>
+                        <Image Source="{svgc:SvgImage Source='https://studiostaticassetsprod.azureedge.net/bundle-cmc/favicon.svg'}" Margin="7" Stretch="Uniform"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="gemini_Click" MouseDoubleClick="gemini_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" local:BorderElement.CornerRadius="20" Click="gemini_Click" MouseDoubleClick="gemini_MouseDoubleClick" Margin="2">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -67,7 +67,7 @@
                         </Button.Visibility>
                         <Image Source="{svgc:SvgImage Source='https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg'}" Margin="3" Stretch="Uniform"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" Click="yiyan_Click" MouseDoubleClick="yiyan_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Padding="0" BorderThickness="0" local:BorderElement.CornerRadius="20" Click="yiyan_Click" MouseDoubleClick="yiyan_MouseDoubleClick" Margin="2">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -78,7 +78,7 @@
                                 <Binding ElementName="wv4" Path="Visibility"/>
                             </MultiBinding>
                         </Button.Visibility>
-                        <Image Source="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico" Margin="2" Stretch="Uniform"/>
+                        <Image Source="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico" Margin="5" Stretch="Uniform"/>
                     </Button>
                 </StackPanel>
                 <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
@@ -111,10 +111,6 @@
                     </MultiBinding>
                 </Button.Visibility>
             </Button>
-            <!--<Line X1="51" Y1="14" X2="51" Y2="39" Stroke="{StaticResource HighlightBrush}" StrokeThickness="2" Visibility="{Binding ElementName=wv1, Path=Visibility}" IsHitTestVisible="False"/>
-            <Line X1="51" Y1="63" X2="51" Y2="88" Stroke="{StaticResource HighlightBrush}" StrokeThickness="2" Visibility="{Binding ElementName=wv2, Path=Visibility}" IsHitTestVisible="False"/>
-            <Line X1="51" Y1="112" X2="51" Y2="137" Stroke="{StaticResource HighlightBrush}" StrokeThickness="2" Visibility="{Binding ElementName=wv3, Path=Visibility}" IsHitTestVisible="False"/>
-            <Line X1="51" Y1="161" X2="51" Y2="186" Stroke="{StaticResource HighlightBrush}" StrokeThickness="2" Visibility="{Binding ElementName=wv4, Path=Visibility}" IsHitTestVisible="False"/>-->
         </local:SimplePanel>
     </Border>
 </Window>
