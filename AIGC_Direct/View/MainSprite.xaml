@@ -30,11 +30,20 @@
         <local:Bool2ResourceConverter x:Key="B2RC"/>
         <local:IconShowConverter x:Key="ISC"/>
         <local:ExitIconShowConverter x:Key="EISC"/>
+        <local:CornerRadiusSelConverter x:Key="CRSC"/>
     </Window.Resources>
 
-    <Border Background="{StaticResource BackgroundBrush}" Margin="25" BorderThickness="1" CornerRadius="24"
+    <Border Background="{StaticResource BackgroundBrush}" Margin="25" BorderThickness="1"
             BorderBrush="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,TransparentBrush'}"
             Effect="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='EffectShadow_HighlightColor,EffectShadow'}">
+        <Border.CornerRadius>
+            <MultiBinding Converter="{StaticResource CRSC}">
+                <Binding ElementName="wv1" Path="Visibility"/>
+                <Binding ElementName="wv2" Path="Visibility"/>
+                <Binding ElementName="wv3" Path="Visibility"/>
+                <Binding ElementName="wv4" Path="Visibility"/>
+            </MultiBinding>
+        </Border.CornerRadius>
         <local:SimplePanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="2">
