@@ -48,10 +48,12 @@
         <local:SimplePanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="2">
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link1_Click" MouseDoubleClick="link1_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link1_Click" MouseDoubleClick="link1_MouseDoubleClick" Margin="2"
+                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link1, Mode=OneWay}">
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link1, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin1, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link2_Click" MouseDoubleClick="link2_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link2_Click" MouseDoubleClick="link2_MouseDoubleClick" Margin="2"
+                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link2, Mode=OneWay}">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -65,7 +67,8 @@
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link2, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin2, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link3_Click" MouseDoubleClick="link3_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link3_Click" MouseDoubleClick="link3_MouseDoubleClick" Margin="2"
+                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link3, Mode=OneWay}">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -79,7 +82,8 @@
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link3, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin3, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link4_Click" MouseDoubleClick="link4_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link4_Click" MouseDoubleClick="link4_MouseDoubleClick" Margin="2"
+                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link4, Mode=OneWay}">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -93,7 +97,8 @@
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link4, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin4, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link5_Click" MouseDoubleClick="link5_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link5_Click" MouseDoubleClick="link5_MouseDoubleClick" Margin="2"
+                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link5, Mode=OneWay}">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -122,14 +127,15 @@
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
                     Foreground="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,BackgroundBrush'}"
                     Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"
-                    local:BorderElement.CornerRadius="9"
+                    local:BorderElement.CornerRadius="9" ToolTip="左键单击切换置顶状态&#x0a;左键双击切换位置锁定&#x0a;滚轮调整透明度"
                     local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-1"
-                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-6,-6,0,0"/>
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-5,-5,0,0"/>
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
-                    Foreground="{StaticResource DangerBrush}" Background="White" Click="exit_Click"
-                    local:BorderElement.CornerRadius="9"
+                    Foreground="{StaticResource DangerBrush}"
+                    Background="White" Click="exit_Click"
+                    local:BorderElement.CornerRadius="9" ToolTip="单击关闭程序"
                     local:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="-1"
-                    HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-6,-6,0">
+                    HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-5,-5,0">
                 <Button.Visibility>
                     <MultiBinding Converter="{StaticResource EISC}">
                         <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
