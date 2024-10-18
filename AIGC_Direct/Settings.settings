@@ -33,28 +33,28 @@
       <Value Profile="(Default)">https://copilot.microsoft.com</Value>
     </Setting>
     <Setting Name="link3" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://zhida.zhihu.com</Value>
-    </Setting>
-    <Setting Name="link4" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://claude.ai</Value>
     </Setting>
-    <Setting Name="link5" Type="System.String" Scope="User">
+    <Setting Name="link4" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://yiyan.baidu.com</Value>
+    </Setting>
+    <Setting Name="link5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://zhida.zhihu.com</Value>
     </Setting>
     <Setting Name="margin1" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="margin2" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">6</Value>
     </Setting>
     <Setting Name="margin3" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2</Value>
-    </Setting>
-    <Setting Name="margin4" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4</Value>
     </Setting>
+    <Setting Name="margin4" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
     <Setting Name="margin5" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

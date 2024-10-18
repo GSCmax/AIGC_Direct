@@ -25,6 +25,7 @@ namespace AIGC_Direct.View
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
                 wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -32,6 +33,7 @@ namespace AIGC_Direct.View
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
                 wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -43,6 +45,7 @@ namespace AIGC_Direct.View
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
                 wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -50,6 +53,7 @@ namespace AIGC_Direct.View
                 wv2.Visibility = Visibility.Visible;
                 wv3.Visibility = Visibility.Collapsed;
                 wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -61,6 +65,7 @@ namespace AIGC_Direct.View
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
                 wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -68,6 +73,7 @@ namespace AIGC_Direct.View
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Visible;
                 wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -79,6 +85,7 @@ namespace AIGC_Direct.View
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
                 wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -86,6 +93,27 @@ namespace AIGC_Direct.View
                 wv2.Visibility = Visibility.Collapsed;
                 wv3.Visibility = Visibility.Collapsed;
                 wv4.Visibility = Visibility.Visible;
+                wv5.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void link5_Click(object sender, RoutedEventArgs e)
+        {
+            if (wv5.Visibility == Visibility.Visible)
+            {
+                wv1.Visibility = Visibility.Collapsed;
+                wv2.Visibility = Visibility.Collapsed;
+                wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                wv1.Visibility = Visibility.Collapsed;
+                wv2.Visibility = Visibility.Collapsed;
+                wv3.Visibility = Visibility.Collapsed;
+                wv4.Visibility = Visibility.Collapsed;
+                wv5.Visibility = Visibility.Visible;
             }
         }
 
@@ -107,6 +135,11 @@ namespace AIGC_Direct.View
         private void link4_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             wv4.CoreWebView2.Navigate(Settings.Default.link4);
+        }
+
+        private void link5_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            wv5.CoreWebView2.Navigate(Settings.Default.link5);
         }
 
         private void info_Click(object sender, RoutedEventArgs e)
@@ -210,11 +243,13 @@ namespace AIGC_Direct.View
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((bool)values[0] || (bool)values[1]
+            if ((bool)values[0]
+                || (bool)values[1]
                 || (Visibility)values[2] == Visibility.Visible
                 || (Visibility)values[3] == Visibility.Visible
                 || (Visibility)values[4] == Visibility.Visible
-                || (Visibility)values[5] == Visibility.Visible)
+                || (Visibility)values[5] == Visibility.Visible
+                || (Visibility)values[6] == Visibility.Visible)
                 return Visibility.Visible;
             else return Visibility.Collapsed;
         }
@@ -233,7 +268,8 @@ namespace AIGC_Direct.View
                 && (Visibility)values[1] != Visibility.Visible
                 && (Visibility)values[2] != Visibility.Visible
                 && (Visibility)values[3] != Visibility.Visible
-                && (Visibility)values[4] != Visibility.Visible)
+                && (Visibility)values[4] != Visibility.Visible
+                && (Visibility)values[5] != Visibility.Visible)
                 return Visibility.Visible;
             else return Visibility.Collapsed;
         }
@@ -251,7 +287,8 @@ namespace AIGC_Direct.View
             if ((Visibility)values[0] != Visibility.Visible
                 && (Visibility)values[1] != Visibility.Visible
                 && (Visibility)values[2] != Visibility.Visible
-                && (Visibility)values[3] != Visibility.Visible)
+                && (Visibility)values[3] != Visibility.Visible
+                && (Visibility)values[4] != Visibility.Visible)
                 return new CornerRadius(24);
             else return new CornerRadius(24, 0, 0, 24);
         }

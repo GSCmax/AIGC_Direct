@@ -145,7 +145,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://zhida.zhihu.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://claude.ai")]
         public string link3 {
             get {
                 return ((string)(this["link3"]));
@@ -157,7 +157,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://claude.ai")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://yiyan.baidu.com")]
         public string link4 {
             get {
                 return ((string)(this["link4"]));
@@ -169,7 +169,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://yiyan.baidu.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://zhida.zhihu.com")]
         public string link5 {
             get {
                 return ((string)(this["link5"]));
@@ -193,7 +193,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
         public int margin2 {
             get {
                 return ((int)(this["margin2"]));
@@ -205,7 +205,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public int margin3 {
             get {
                 return ((int)(this["margin3"]));
@@ -217,7 +217,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public int margin4 {
             get {
                 return ((int)(this["margin4"]));
@@ -229,7 +229,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int margin5 {
             get {
                 return ((int)(this["margin5"]));

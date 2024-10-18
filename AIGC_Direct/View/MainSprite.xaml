@@ -42,6 +42,7 @@
                 <Binding ElementName="wv2" Path="Visibility"/>
                 <Binding ElementName="wv3" Path="Visibility"/>
                 <Binding ElementName="wv4" Path="Visibility"/>
+                <Binding ElementName="wv5" Path="Visibility"/>
             </MultiBinding>
         </Border.CornerRadius>
         <local:SimplePanel>
@@ -59,6 +60,7 @@
                                 <Binding ElementName="wv2" Path="Visibility"/>
                                 <Binding ElementName="wv3" Path="Visibility"/>
                                 <Binding ElementName="wv4" Path="Visibility"/>
+                                <Binding ElementName="wv5" Path="Visibility"/>
                             </MultiBinding>
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link2, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin2, Mode=OneWay}" Stretch="Fill"/>
@@ -72,6 +74,7 @@
                                 <Binding ElementName="wv2" Path="Visibility"/>
                                 <Binding ElementName="wv3" Path="Visibility"/>
                                 <Binding ElementName="wv4" Path="Visibility"/>
+                                <Binding ElementName="wv5" Path="Visibility"/>
                             </MultiBinding>
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link3, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin3, Mode=OneWay}" Stretch="Fill"/>
@@ -85,9 +88,24 @@
                                 <Binding ElementName="wv2" Path="Visibility"/>
                                 <Binding ElementName="wv3" Path="Visibility"/>
                                 <Binding ElementName="wv4" Path="Visibility"/>
+                                <Binding ElementName="wv5" Path="Visibility"/>
                             </MultiBinding>
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link4, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin4, Mode=OneWay}" Stretch="Fill"/>
+                    </Button>
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link5_Click" MouseDoubleClick="link5_MouseDoubleClick" Margin="2">
+                        <Button.Visibility>
+                            <MultiBinding Converter="{StaticResource ISC}">
+                                <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
+                                <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsActive"/>
+                                <Binding ElementName="wv1" Path="Visibility"/>
+                                <Binding ElementName="wv2" Path="Visibility"/>
+                                <Binding ElementName="wv3" Path="Visibility"/>
+                                <Binding ElementName="wv4" Path="Visibility"/>
+                                <Binding ElementName="wv5" Path="Visibility"/>
+                            </MultiBinding>
+                        </Button.Visibility>
+                        <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link5, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin5, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
                 </StackPanel>
                 <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
@@ -98,6 +116,8 @@
                               Source="{Binding Source={x:Static app:Settings.Default}, Path=link3, Mode=OneWay}" Visibility="Collapsed"/>
                 <wv2:WebView2 Name="wv4" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
                               Source="{Binding Source={x:Static app:Settings.Default}, Path=link4, Mode=OneWay}" Visibility="Collapsed"/>
+                <wv2:WebView2 Name="wv5" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link5, Mode=OneWay}" Visibility="Collapsed"/>
             </StackPanel>
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
                     Foreground="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,BackgroundBrush'}"
@@ -117,6 +137,7 @@
                         <Binding ElementName="wv2" Path="Visibility"/>
                         <Binding ElementName="wv3" Path="Visibility"/>
                         <Binding ElementName="wv4" Path="Visibility"/>
+                        <Binding ElementName="wv5" Path="Visibility"/>
                     </MultiBinding>
                 </Button.Visibility>
             </Button>
