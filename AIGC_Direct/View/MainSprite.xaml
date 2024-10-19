@@ -46,8 +46,15 @@
             </MultiBinding>
         </Border.CornerRadius>
         <local:SimplePanel>
+            <!--#region 指示器-->
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv1, Path=Visibility}" IsHitTestVisible="False" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,36,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv2, Path=Visibility}" IsHitTestVisible="False" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,80,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv3, Path=Visibility}" IsHitTestVisible="False" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,124,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv4, Path=Visibility}" IsHitTestVisible="False" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,168,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv5, Path=Visibility}" IsHitTestVisible="False" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,212,0,0"/>
+            <!--#endregion-->
             <StackPanel Orientation="Horizontal">
-                <StackPanel Margin="2">
+                <StackPanel Orientation="Vertical" Margin="2">
                     <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link1_Click" MouseDoubleClick="link1_MouseDoubleClick" Margin="2"
                             ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link1, Mode=OneWay}">
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link1, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin1, Mode=OneWay}" Stretch="Fill"/>
@@ -147,11 +154,6 @@
                     </MultiBinding>
                 </Button.Visibility>
             </Button>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv1, Path=Visibility}" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,36,0,0"/>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv2, Path=Visibility}" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,80,0,0"/>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv3, Path=Visibility}" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,124,0,0"/>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv4, Path=Visibility}" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,168,0,0"/>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv5, Path=Visibility}" Height="8" Width="8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="36,212,0,0"/>
         </local:SimplePanel>
     </Border>
 </Window>
