@@ -13,7 +13,6 @@
         ShowInTaskbar="False"
         ShowActivated="False"
         ResizeMode="NoResize"
-        AllowsTransparency="True"
         Background="Transparent"
         UseLayoutRounding="True"
         SnapsToDevicePixels="True"
@@ -24,6 +23,10 @@
         local:WindowAttach.SnapDistance="0"
         local:WindowAttach.SnapToScreenEdge="True">
 
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1"/>
+    </WindowChrome.WindowChrome>
+    
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="B2VC"/>
         <local:Bool2ResourceConverter x:Key="B2RC"/>
