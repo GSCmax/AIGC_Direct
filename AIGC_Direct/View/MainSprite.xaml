@@ -33,7 +33,7 @@
         <local:Link2FaviconConverter x:Key="L2FC"/>
     </Window.Resources>
 
-    <Border Background="{StaticResource BackgroundBrush}" Margin="25" BorderThickness="1"
+    <Border Background="{StaticResource BackgroundBrush}" Margin="10" BorderThickness="1"
             BorderBrush="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,TransparentBrush'}"
             Effect="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='EffectShadow_HighlightColor,EffectShadow'}">
         <Border.CornerRadius>
