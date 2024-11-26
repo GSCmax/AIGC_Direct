@@ -47,11 +47,11 @@
         </Border.CornerRadius>
         <local:SimplePanel>
             <!--#region 指示器-->
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv1, Path=Visibility}" IsHitTestVisible="False" Height="6" Width="6" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="38,38,0,0"/>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv2, Path=Visibility}" IsHitTestVisible="False" Height="6" Width="6" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="38,82,0,0"/>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv3, Path=Visibility}" IsHitTestVisible="False" Height="6" Width="6" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="38,126,0,0"/>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv4, Path=Visibility}" IsHitTestVisible="False" Height="6" Width="6" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="38,170,0,0"/>
-            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv5, Path=Visibility}" IsHitTestVisible="False" Height="6" Width="6" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="38,214,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv1, Path=Visibility}" IsHitTestVisible="False" Height="12" Width="12" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,32,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv2, Path=Visibility}" IsHitTestVisible="False" Height="12" Width="12" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,76,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv3, Path=Visibility}" IsHitTestVisible="False" Height="12" Width="12" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,120,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv4, Path=Visibility}" IsHitTestVisible="False" Height="12" Width="12" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,164,0,0"/>
+            <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv5, Path=Visibility}" IsHitTestVisible="False" Height="12" Width="12" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,208,0,0"/>
             <!--#endregion-->
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Margin="2">
