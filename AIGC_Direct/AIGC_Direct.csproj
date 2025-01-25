@@ -9,8 +9,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Resources/icon.ico</ApplicationIcon>
     <Authors>GSC@GStudio</Authors>
-    <Version>0.0.2.0</Version>
-    <Copyright>Copyright © GSC 2023</Copyright>
+    <Version>0.0.3.0</Version>
+    <Copyright>Copyright © GSC 2025</Copyright>
     <RepositoryUrl>https://github.com/GSCmax/AIGC_Direct</RepositoryUrl>
   </PropertyGroup>
 
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1722.45" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2957.106" />
   </ItemGroup>
 
   <ItemGroup>
