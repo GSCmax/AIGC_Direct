@@ -109,7 +109,7 @@ namespace AIGC_Direct {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Control|Alt,D")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Control+Alt,D")]
         public string HotKey {
             get {
                 return ((string)(this["HotKey"]));

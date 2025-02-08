@@ -24,7 +24,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="HotKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Control|Alt,D</Value>
+      <Value Profile="(Default)">Control+Alt,D</Value>
     </Setting>
   </Settings>
 </SettingsFile>

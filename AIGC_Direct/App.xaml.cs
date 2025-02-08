@@ -28,7 +28,7 @@ namespace AIGC_Direct
             WindowAttach.SetIsDragElement(ms, Settings.Default.CanDrag);
             //ms.Activate();
 
-            string[] HotKey_ModifierKeys = Settings.Default.HotKey.Split(',')[0].Split('|');
+            string[] HotKey_ModifierKeys = Settings.Default.HotKey.Split(',')[0].Split('+');
             string HotKey_Key = Settings.Default.HotKey.Split(',')[1];
 
             ModifierKeys mks = ModifierKeys.None;
