@@ -3,14 +3,13 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFrameworks>net6.0-windows;net8.0-windows</TargetFrameworks>
-    <LangVersion>10.0</LangVersion>
+    <LangVersion>12.0</LangVersion>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Resources/icon.ico</ApplicationIcon>
-    <Authors>GSC@GStudio</Authors>
-    <Version>0.0.3.0</Version>
-    <Copyright>Copyright © GSC 2025</Copyright>
+    <Authors>管省超@溧阳市公安局</Authors>
+    <Version>0.0.0.1</Version>
     <RepositoryUrl>https://github.com/GSCmax/AIGC_Direct</RepositoryUrl>
   </PropertyGroup>
 
