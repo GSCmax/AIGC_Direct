@@ -29,6 +29,11 @@ namespace AIGC_Direct.View
             }
         }
 
+        public void ShowWV()
+        {
+            wv1.Visibility = Visibility.Visible;
+        }
+
         private void Link1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             wv1.CoreWebView2.Navigate("https://chat.deepseek.com");

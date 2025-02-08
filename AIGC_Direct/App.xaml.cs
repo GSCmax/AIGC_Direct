@@ -49,7 +49,7 @@ namespace AIGC_Direct
 
             try
             {
-                hkh = new Helpers.HotKeyHelper(mks, k, ms, (hotkey) => { ms.Topmost = true; ms.Activate(); });
+                hkh = new Helpers.HotKeyHelper(mks, k, ms, (hotkey) => { ms.Topmost = true; ms.Activate(); ms.ShowWV(); });
             }
             catch
             {
