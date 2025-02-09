@@ -50,9 +50,12 @@
                     <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="Link1_Click" MouseDoubleClick="Link1_MouseDoubleClick" Margin="2">
                         <Image Source="/AIGC_Direct;component/Resources/dslogo.png" Stretch="UniformToFill"/>
                     </Button>
+                    <Button Width="30" Height="30" Content="⭯" Style="{StaticResource ButtonBaseStyle}" Click="ReloadDS_Button_Click" Visibility="{Binding Visibility, ElementName=wv1}" Margin="2,6,2,2"/>
+                    <Button Width="30" Height="30" Content="🡠" Style="{StaticResource ButtonBaseStyle}" Visibility="{Binding Visibility, ElementName=wv1}" Margin="2"/>
+                    <Button Width="30" Height="30" Content="🡢" Style="{StaticResource ButtonBaseStyle}" Visibility="{Binding Visibility, ElementName=wv1}" Margin="2"/>
                 </StackPanel>
                 <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="https://chat.deepseek.com" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=DSAddr}" Visibility="Collapsed"/>
             </StackPanel>
             <!--#endregion-->
 

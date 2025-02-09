@@ -118,5 +118,17 @@ namespace AIGC_Direct {
                 this["HotKey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://chat.deepseek.com")]
+        public string DSAddr {
+            get {
+                return ((string)(this["DSAddr"]));
+            }
+            set {
+                this["DSAddr"] = value;
+            }
+        }
     }
 }

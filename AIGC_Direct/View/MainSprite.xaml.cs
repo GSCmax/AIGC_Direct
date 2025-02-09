@@ -75,6 +75,11 @@ namespace AIGC_Direct.View
         {
             Application.Current.Shutdown();
         }
+
+        private void ReloadDS_Button_Click(object sender, RoutedEventArgs e)
+        {
+            wv1.CoreWebView2.Navigate(Settings.Default.DSAddr);
+        }
     }
 
     #region Converters
@@ -171,6 +176,19 @@ namespace AIGC_Direct.View
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return string.Format((string)parameter, value);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
+    public class Value2HalfConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (double)value / 2;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
