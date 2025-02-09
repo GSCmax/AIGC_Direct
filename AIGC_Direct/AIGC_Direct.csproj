@@ -12,7 +12,13 @@
     <Copyright>Copyright © 管省超 2025</Copyright>
     <Version>0.0.0.1</Version>
     <RepositoryUrl>https://github.com/GSCmax/AIGC_Direct</RepositoryUrl>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CefSharp.Wpf.HwndHost" Version="109.1.110" />
+    <PackageReference Include="CefSharp.Wpf.NETCore" Version="109.1.110" />
+  </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\icon.ico">
@@ -21,10 +27,6 @@
     <Resource Include="Resources\dslogo.png">
       <Link>Resources\dslogo.png</Link>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2957.106" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cefhwnd="clr-namespace:CefSharp.Wpf.HwndHost;assembly=CefSharp.Wpf.HwndHost"
         xmlns:local="clr-namespace:AIGC_Direct.View"
         xmlns:app="clr-namespace:AIGC_Direct"
-        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
         Title="AIGC Direct"
         SizeToContent="WidthAndHeight"
@@ -47,12 +47,17 @@
             <!--#region 主窗口-->
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Margin="2">
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="Link1_Click" MouseDoubleClick="Link1_MouseDoubleClick" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="Link1_Click" Margin="2">
                         <Image Source="/AIGC_Direct;component/Resources/dslogo.png" Stretch="UniformToFill"/>
                     </Button>
+                    <Button Width="30" Height="30" Content="⭯" Style="{StaticResource ButtonBaseStyle}" Click="ReloadDS_Button_Click" Visibility="{Binding Visibility, ElementName=wv1}" Margin="2,6,2,2"/>
+                    <Button Width="30" Height="30" Content="🡠" Style="{StaticResource ButtonBaseStyle}" Command="{Binding WebBrowser.BackCommand, ElementName=wv1}" Visibility="{Binding Visibility, ElementName=wv1}" Margin="2"/>
+                    <Button Width="30" Height="30" Content="🡢" Style="{StaticResource ButtonBaseStyle}" Command="{Binding WebBrowser.ForwardCommand, ElementName=wv1}" Visibility="{Binding Visibility, ElementName=wv1}" Margin="2"/>
                 </StackPanel>
-                <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="https://chat.deepseek.com" Visibility="Collapsed"/>
+                <Border Background="White">
+                    <cefhwnd:ChromiumWebBrowser Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
+                                                Address="{Binding Source={x:Static app:Settings.Default}, Path=DSAddr}" Visibility="Collapsed"/>
+                </Border>
             </StackPanel>
             <!--#endregion-->
 

@@ -26,5 +26,8 @@
     <Setting Name="HotKey" Type="System.String" Scope="User">
       <Value Profile="(Default)">Control+Alt,D</Value>
     </Setting>
+    <Setting Name="DSAddr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://chat.deepseek.com</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

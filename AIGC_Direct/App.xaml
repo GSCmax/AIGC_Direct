@@ -5,6 +5,8 @@
              xmlns:view="clr-namespace:AIGC_Direct.View">
     <Application.Resources>
         <ResourceDictionary>
+            <view:Value2HalfConverter x:Key="V2HC"/>
+
             <Color o:Freeze="True" x:Key="DangerColor">#db3340</Color>
             <Color o:Freeze="True" x:Key="BackgroundColor">#292a2d</Color>
             <Color o:Freeze="True" x:Key="HighlightColor">#4d6bfe</Color>
@@ -58,15 +60,15 @@
                 </Setter>
             </Style>
             <Style o:Freeze="True" x:Key="ButtonBaseStyle" TargetType="Button">
-                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontSize" Value="20"/>
                 <Setter Property="Padding" Value="0"/>
-                <Setter Property="Background" Value="#ffffff"/>
+                <Setter Property="Background" Value="#f5f5f5"/>
                 <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="view:BorderElement.CornerRadius" Value="20"/>
+                <Setter Property="view:BorderElement.CornerRadius" Value="{Binding Path=Width, RelativeSource={RelativeSource Self}, Converter={StaticResource V2HC}}"/>
                 <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                 <Setter Property="Template">
                     <Setter.Value>

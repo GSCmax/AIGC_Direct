@@ -1,4 +1,6 @@
 ﻿using AIGC_Direct.View;
+using CefSharp;
+using CefSharp.Wpf;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -11,14 +13,29 @@ namespace AIGC_Direct
     public partial class App : Application
     {
         MainSprite? ms;
+        CefSettings? settings;
         Helpers.HotKeyHelper? hkh;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            ms = new MainSprite();
-            ms.Opacity = 0;
+            #region cefsharp相关
+            settings = new()
+            {
+                CachePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AIGCDirect\\CefSharpCache"),
+                UserDataPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AIGCDirect\\CefSharpUserData"),
+                PersistSessionCookies = true,
+                Locale = "zh-CN"
+            };
+            Cef.Initialize(settings);
+            #endregion
+
+            #region 窗口初始化相关
+            ms = new()
+            {
+                Opacity = 0
+            };
             ms.Show();
 
             ms.Left = Settings.Default.X;
@@ -26,8 +43,9 @@ namespace AIGC_Direct
             ms.Opacity = Settings.Default.Opacity;
             ms.Topmost = Settings.Default.Topmost;
             WindowAttach.SetIsDragElement(ms, Settings.Default.CanDrag);
-            //ms.Activate();
+            #endregion
 
+            #region 热键注册相关
             string[] HotKey_ModifierKeys = Settings.Default.HotKey.Split(',')[0].Split('+');
             string HotKey_Key = Settings.Default.HotKey.Split(',')[1];
 
@@ -57,20 +75,23 @@ namespace AIGC_Direct
                 System.Windows.Forms.MessageBox.Show($"Hotkey ({Settings.Default.HotKey}) has already been registered.\nYou can not use hotkey to call the sprite currently.\n\n热键({Settings.Default.HotKey})已被注册。\n您当前无法使用热键呼出此工具。", "AIGC Direct", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
                 return;
             }
+            #endregion
         }
 
         protected override void OnExit(ExitEventArgs e)
         {
             base.OnExit(e);
 
-            Settings.Default.X = ms.Left;
-            Settings.Default.Y = ms.Top;
-            Settings.Default.Opacity = Math.Round(ms.Opacity, 2);
-            Settings.Default.Topmost = ms.Topmost;
-            Settings.Default.CanDrag = WindowAttach.GetIsDragElement(ms);
+            Settings.Default.X = ms!.Left;
+            Settings.Default.Y = ms!.Top;
+            Settings.Default.Opacity = Math.Round(ms!.Opacity, 2);
+            Settings.Default.Topmost = ms!.Topmost;
+            Settings.Default.CanDrag = WindowAttach.GetIsDragElement(ms!);
             Settings.Default.Save();
 
-            hkh.Dispose();
+            hkh!.Dispose();
+
+            Cef.Shutdown();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CefSharp;
+using CefSharp.Handler;
+using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
@@ -15,6 +17,8 @@ namespace AIGC_Direct.View
         public MainSprite()
         {
             InitializeComponent();
+
+            wv1.LifeSpanHandler = new CustomLifeSpanHandler();
         }
 
         private void Link1_Click(object sender, RoutedEventArgs e)
@@ -32,11 +36,6 @@ namespace AIGC_Direct.View
         public void ShowWV()
         {
             wv1.Visibility = Visibility.Visible;
-        }
-
-        private void Link1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            wv1.CoreWebView2.Navigate("https://chat.deepseek.com");
         }
 
         private void Info_Click(object sender, RoutedEventArgs e)
@@ -75,6 +74,26 @@ namespace AIGC_Direct.View
         {
             Application.Current.Shutdown();
         }
+
+        private void ReloadDS_Button_Click(object sender, RoutedEventArgs e)
+        {
+            wv1.Address = Settings.Default.DSAddr;
+        }
+    }
+
+    public class CustomLifeSpanHandler : LifeSpanHandler
+    {
+        protected override bool DoClose(IWebBrowser chromiumWebBrowser, IBrowser browser)
+        {
+            return false;
+        }
+
+        protected override bool OnBeforePopup(IWebBrowser chromiumWebBrowser, IBrowser browser, IFrame frame, string targetUrl, string targetFrameName, WindowOpenDisposition targetDisposition, bool userGesture, IPopupFeatures popupFeatures, IWindowInfo windowInfo, IBrowserSettings browserSettings, ref bool noJavascriptAccess, out IWebBrowser newBrowser)
+        {
+            chromiumWebBrowser.Load(targetUrl); // 在当前浏览器实例加载目标链接
+            newBrowser = null;
+            return true; // 返回 true 阻止默认的打开新窗口行为
+        }
     }
 
     #region Converters
@@ -91,20 +110,20 @@ namespace AIGC_Direct.View
 
                 var clip = new PathGeometry
                 {
-                    Figures = new PathFigureCollection
-                {
-                    new(new Point(radius.TopLeft, 0), new PathSegment[]
-                    {
-                        new LineSegment(new Point(width - radius.TopRight, 0), false),
-                        new ArcSegment(new Point(width, radius.TopRight), new Size(radius.TopRight, radius.TopRight), 90, false, SweepDirection.Clockwise, false),
-                        new LineSegment(new Point(width, height - radius.BottomRight), false),
-                        new ArcSegment(new Point(width - radius.BottomRight, height), new Size(radius.BottomRight, radius.BottomRight), 90, false, SweepDirection.Clockwise, false),
-                        new LineSegment(new Point(radius.BottomLeft, height), false),
-                        new ArcSegment(new Point(0, height - radius.BottomLeft), new Size(radius.BottomLeft, radius.BottomLeft), 90, false, SweepDirection.Clockwise, false),
-                        new LineSegment(new Point(0, radius.TopLeft), false),
-                        new ArcSegment(new Point(radius.TopLeft, 0), new Size(radius.TopLeft, radius.TopLeft), 90, false, SweepDirection.Clockwise, false),
-                    }, false)
-                }
+                    Figures =
+                    [
+                        new(new Point(radius.TopLeft, 0),
+                        [
+                            new LineSegment(new Point(width - radius.TopRight, 0), false),
+                            new ArcSegment(new Point(width, radius.TopRight), new Size(radius.TopRight, radius.TopRight), 90, false, SweepDirection.Clockwise, false),
+                            new LineSegment(new Point(width, height - radius.BottomRight), false),
+                            new ArcSegment(new Point(width - radius.BottomRight, height), new Size(radius.BottomRight, radius.BottomRight), 90, false, SweepDirection.Clockwise, false),
+                            new LineSegment(new Point(radius.BottomLeft, height), false),
+                            new ArcSegment(new Point(0, height - radius.BottomLeft), new Size(radius.BottomLeft, radius.BottomLeft), 90, false, SweepDirection.Clockwise, false),
+                            new LineSegment(new Point(0, radius.TopLeft), false),
+                            new ArcSegment(new Point(radius.TopLeft, 0), new Size(radius.TopLeft, radius.TopLeft), 90, false, SweepDirection.Clockwise, false),
+                        ], false)
+                    ]
                 };
                 clip.Freeze();
 
@@ -171,6 +190,19 @@ namespace AIGC_Direct.View
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return string.Format((string)parameter, value);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
+    public class Value2HalfConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (double)value / 2;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
