@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AIGC_Direct.View"
+        xmlns:view="clr-namespace:AIGC_Direct.View"
         xmlns:app="clr-namespace:AIGC_Direct"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
@@ -17,21 +17,11 @@
         Background="Transparent"
         UseLayoutRounding="True"
         SnapsToDevicePixels="True"
-        WindowStartupLocation="CenterScreen"
-        local:WindowAttach.ShowInTaskManager="False"
-        local:WindowAttach.IgnoreAltF4="True"
-        local:WindowAttach.HideWhenClosing="True"
-        local:WindowAttach.SnapDistance="0"
-        local:WindowAttach.SnapToScreenEdge="True">
-
-    <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="B2VC"/>
-        <local:Bool2ResourceConverter x:Key="B2RC"/>
-        <local:IconShowConverter x:Key="ISC"/>
-        <local:ExitIconShowConverter x:Key="EISC"/>
-        <local:CornerRadiusSelConverter x:Key="CRSC"/>
-        <local:Link2FaviconConverter x:Key="L2FC"/>
-    </Window.Resources>
+        view:WindowAttach.ShowInTaskManager="False"
+        view:WindowAttach.IgnoreAltF4="True"
+        view:WindowAttach.HideWhenClosing="True"
+        view:WindowAttach.SnapDistance="0"
+        view:WindowAttach.SnapToScreenEdge="True">
 
     <Border Background="{StaticResource BackgroundBrush}" Margin="10" BorderThickness="1"
             BorderBrush="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,TransparentBrush'}"
@@ -45,7 +35,7 @@
                 <Binding ElementName="wv5" Path="Visibility"/>
             </MultiBinding>
         </Border.CornerRadius>
-        <local:SimplePanel>
+        <view:SimplePanel>
             <!--#region 指示器-->
             <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv1, Path=Visibility}" IsHitTestVisible="False" Height="12" Width="12" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,32,0,0"/>
             <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv2, Path=Visibility}" IsHitTestVisible="False" Height="12" Width="12" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,76,0,0"/>
@@ -54,13 +44,13 @@
             <Ellipse Fill="{StaticResource HighlightBrush}" Visibility="{Binding ElementName=wv5, Path=Visibility}" IsHitTestVisible="False" Height="12" Width="12" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,208,0,0"/>
             <!--#endregion-->
             <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Vertical" Margin="2">
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link1_Click" MouseDoubleClick="link1_MouseDoubleClick" Margin="2"
-                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link1, Mode=OneWay}">
+                <DockPanel LastChildFill="False" Margin="2">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="Link1_Click" Margin="2"
+                            DockPanel.Dock="Top" ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link1, Mode=OneWay}">
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link1, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin1, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link2_Click" MouseDoubleClick="link2_MouseDoubleClick" Margin="2"
-                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link2, Mode=OneWay}">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="Link2_Click" Margin="2"
+                            DockPanel.Dock="Top" ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link2, Mode=OneWay}">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -74,8 +64,8 @@
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link2, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin2, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link3_Click" MouseDoubleClick="link3_MouseDoubleClick" Margin="2"
-                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link3, Mode=OneWay}">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="Link3_Click" Margin="2"
+                            DockPanel.Dock="Top" ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link3, Mode=OneWay}">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -89,8 +79,8 @@
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link3, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin3, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link4_Click" MouseDoubleClick="link4_MouseDoubleClick" Margin="2"
-                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link4, Mode=OneWay}">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="Link4_Click" Margin="2"
+                            DockPanel.Dock="Top" ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link4, Mode=OneWay}">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -104,8 +94,8 @@
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link4, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin4, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="link5_Click" MouseDoubleClick="link5_MouseDoubleClick" Margin="2"
-                            ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link5, Mode=OneWay}">
+                    <Button Width="40" Height="40" Style="{StaticResource ButtonBaseStyle}" Click="Link5_Click" Margin="2"
+                            DockPanel.Dock="Top" ToolTip="{Binding Source={x:Static app:Settings.Default}, Path=link5, Mode=OneWay}">
                         <Button.Visibility>
                             <MultiBinding Converter="{StaticResource ISC}">
                                 <Binding RelativeSource="{RelativeSource AncestorType=Window}" Path="IsMouseOver"/>
@@ -119,29 +109,73 @@
                         </Button.Visibility>
                         <Image Source="{Binding Source={x:Static app:Settings.Default}, Path=link5, Converter={StaticResource L2FC}, Mode=OneWay}" Margin="{Binding Source={x:Static app:Settings.Default}, Path=margin5, Mode=OneWay}" Stretch="Fill"/>
                     </Button>
-                </StackPanel>
+                    <Button Width="30" Height="30" view:IconElement.Geometry="{StaticResource ConfigGeometry}" view:IconElement.Height="16" view:IconElement.Width="16" DockPanel.Dock="Bottom" Style="{StaticResource ButtonIcon}" Margin="2,2,2,7">
+                        <Button.Visibility>
+                            <MultiBinding Converter="{StaticResource WVCSC}">
+                                <Binding ElementName="wv1" Path="Visibility"/>
+                                <Binding ElementName="wv2" Path="Visibility"/>
+                                <Binding ElementName="wv3" Path="Visibility"/>
+                                <Binding ElementName="wv4" Path="Visibility"/>
+                                <Binding ElementName="wv5" Path="Visibility"/>
+                            </MultiBinding>
+                        </Button.Visibility>
+                    </Button>
+                    <Button Width="30" Height="30" Content="🡢" DockPanel.Dock="Bottom" Style="{StaticResource ButtonBaseStyle}" Margin="2">
+                        <Button.Visibility>
+                            <MultiBinding Converter="{StaticResource WVCSC}">
+                                <Binding ElementName="wv1" Path="Visibility"/>
+                                <Binding ElementName="wv2" Path="Visibility"/>
+                                <Binding ElementName="wv3" Path="Visibility"/>
+                                <Binding ElementName="wv4" Path="Visibility"/>
+                                <Binding ElementName="wv5" Path="Visibility"/>
+                            </MultiBinding>
+                        </Button.Visibility>
+                    </Button>
+                    <Button Width="30" Height="30" Content="🡠" DockPanel.Dock="Bottom" Style="{StaticResource ButtonBaseStyle}" Margin="2">
+                        <Button.Visibility>
+                            <MultiBinding Converter="{StaticResource WVCSC}">
+                                <Binding ElementName="wv1" Path="Visibility"/>
+                                <Binding ElementName="wv2" Path="Visibility"/>
+                                <Binding ElementName="wv3" Path="Visibility"/>
+                                <Binding ElementName="wv4" Path="Visibility"/>
+                                <Binding ElementName="wv5" Path="Visibility"/>
+                            </MultiBinding>
+                        </Button.Visibility>
+                    </Button>
+                    <Button Width="30" Height="30" Content="⭯" DockPanel.Dock="Bottom" Style="{StaticResource ButtonBaseStyle}" Click="Restore_Click" VerticalAlignment="Bottom" Margin="2">
+                        <Button.Visibility>
+                            <MultiBinding Converter="{StaticResource WVCSC}">
+                                <Binding ElementName="wv1" Path="Visibility"/>
+                                <Binding ElementName="wv2" Path="Visibility"/>
+                                <Binding ElementName="wv3" Path="Visibility"/>
+                                <Binding ElementName="wv4" Path="Visibility"/>
+                                <Binding ElementName="wv5" Path="Visibility"/>
+                            </MultiBinding>
+                        </Button.Visibility>
+                    </Button>
+                </DockPanel>
                 <wv2:WebView2 Name="wv1" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link1, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link1, Mode=OneWay}" Tag="{Binding Source={x:Static app:Settings.Default}, Path=link1, Mode=OneWay}" Visibility="Collapsed"/>
                 <wv2:WebView2 Name="wv2" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link2, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link2, Mode=OneWay}" Tag="{Binding Source={x:Static app:Settings.Default}, Path=link2, Mode=OneWay}" Visibility="Collapsed"/>
                 <wv2:WebView2 Name="wv3" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link3, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link3, Mode=OneWay}" Tag="{Binding Source={x:Static app:Settings.Default}, Path=link3, Mode=OneWay}" Visibility="Collapsed"/>
                 <wv2:WebView2 Name="wv4" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link4, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link4, Mode=OneWay}" Tag="{Binding Source={x:Static app:Settings.Default}, Path=link4, Mode=OneWay}" Visibility="Collapsed"/>
                 <wv2:WebView2 Name="wv5" Width="{Binding Source={x:Static app:Settings.Default}, Path=Width}" Height="{Binding Source={x:Static app:Settings.Default}, Path=Height}"
-                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link5, Mode=OneWay}" Visibility="Collapsed"/>
+                              Source="{Binding Source={x:Static app:Settings.Default}, Path=link5, Mode=OneWay}" Tag="{Binding Source={x:Static app:Settings.Default}, Path=link5, Mode=OneWay}" Visibility="Collapsed"/>
             </StackPanel>
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
                     Foreground="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource B2RC}, ConverterParameter='HighlightBrush,BackgroundBrush'}"
-                    Background="White" Click="info_Click" MouseDoubleClick="info_MouseDoubleClick" MouseWheel="info_MouseWheel"
-                    local:BorderElement.CornerRadius="9" ToolTip="单击切换置顶状态&#x0a;双击切换位置锁定&#x0a;滚轮调整透明度"
-                    local:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-1"
+                    Background="White" Click="Info_Click" MouseDoubleClick="Info_MouseDoubleClick" MouseWheel="Info_MouseWheel"
+                    view:BorderElement.CornerRadius="9" ToolTip="单击切换置顶状态&#x0a;双击切换位置锁定&#x0a;滚轮调整透明度"
+                    view:IconElement.Geometry="{StaticResource InfoGeometry}" Padding="-1"
                     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-5,-5,0,0"/>
             <Button Width="18" Height="18" Style="{StaticResource ButtonIcon}"
                     Foreground="{StaticResource DangerBrush}"
-                    Background="White" Click="exit_Click"
-                    local:BorderElement.CornerRadius="9" ToolTip="单击关闭应用程序"
-                    local:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="-1"
+                    Background="White" Click="Exit_Click"
+                    view:BorderElement.CornerRadius="9" ToolTip="单击关闭应用程序"
+                    view:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="-1"
                     HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-5,-5,0">
                 <Button.Visibility>
                     <MultiBinding Converter="{StaticResource EISC}">
@@ -154,6 +188,6 @@
                     </MultiBinding>
                 </Button.Visibility>
             </Button>
-        </local:SimplePanel>
+        </view:SimplePanel>
     </Border>
 </Window>
